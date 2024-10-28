@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app_home_page"
+    android:background="@color/light_gray"
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/deliver_label"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+           android:layout_centerHorizontal="true"
+            android:text="@string/deliver_label"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/house_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below = "@+id/deliver_label"
+            android:text="@string/name_street_label"
+            android:layout_centerHorizontal="true"
+            android:textSize="17dp"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/order_label"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/house_name_label"
+            android:text="What would you like to order"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            />
+
+        <SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/order_label"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/dark_line_rounded"
+            android:queryHint="Search for food"
+            android:iconifiedByDefault="false"
+            />
+
+        <!--Food type choice -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_bar"
+            android:layout_marginTop="20dp"
+            android:background="@color/light_gray"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <!--Food container 1 -->
+                <FrameLayout
+                    android:id="@+id/food_frame_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/oval_shape">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza"
+                        app:shapeAppearanceOverlay="@style/roundImageView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:text="Pizza"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <!-- Food container 2 -->
+                <FrameLayout
+                    android:id="@+id/food_frame_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/oval_shape">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/beef_burger"
+                        app:shapeAppearanceOverlay="@style/roundImageView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:text="Burger"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <!--Food container 3 -->
+                <FrameLayout
+                    android:id="@+id/food_frame_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/oval_shape">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/milk_tea"
+                        app:shapeAppearanceOverlay="@style/roundImageView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:text="Milk tea"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+
+                <!--Food container 4 -->
+                <FrameLayout
+                    android:id="@+id/food_frame_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/oval_shape">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rice"
+                        app:shapeAppearanceOverlay="@style/roundImageView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:text="Rice"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+
+                <!--Food container 5 -->
+                <FrameLayout
+                    android:id="@+id/food_frame_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/oval_shape">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dessert"
+                        app:shapeAppearanceOverlay="@style/roundImageView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:text="Dessert"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+</ScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_above="@+id/bottom_nav"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_nav"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigator"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        android:background="@color/light_black"
+        />
+</RelativeLayout>

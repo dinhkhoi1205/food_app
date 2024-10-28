@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">food_app_2</string>
+
+    <!-- Bottom navigator -->
+    <string name="home_icon">Home</string>
+    <string name="person_icon">Person</string>
+    <string name="cart_icon">Cart</string>
+
+    <!-- Log in screen -->
+    <string name="sign_in_label">Sign in</string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="forgot_password_label">Forgot password?</string>
+    <string name="or_label">Or</string>
+
+    <!-- Home page screen -->
+    <string name="deliver_label">Deliver to</string>
+    <string name="name_street_label">27/70/50 Street 9, Ward 16, Go Vap Distress</string>
+</resources>
