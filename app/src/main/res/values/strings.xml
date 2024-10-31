@@ -16,4 +16,6 @@
     <!-- Home page screen -->
     <string name="deliver_label">Deliver to</string>
     <string name="name_street_label">27/70/50 Street 9, Ward 16, Go Vap Distress</string>
+
+    <string name="plus">+</string>
 </resources>
