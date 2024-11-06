@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="food_type.pizza_listview">
+    tools:context="food_type.milktea_listview">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pizza_recycler_view"
+        android:id="@+id/milktea_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/food_items_listview"

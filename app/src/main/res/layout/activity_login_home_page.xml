@@ -39,7 +39,7 @@
         android:layout_below="@+id/username_label"
         android:background="@drawable/dark_line_rounded"
         android:layout_margin="10dp"
-        android:hint="Enter your username"
+        android:hint="@string/username_enter_hint"
         android:padding="10dp"
         />
 
@@ -70,7 +70,7 @@
             android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Enter password"
+            android:hint="@string/enter_password_hint"
             android:background="@drawable/dark_line_rounded"
             android:ems="15"
             android:inputType="textPassword" />
@@ -85,7 +85,7 @@
         android:gravity="end"
         android:textColor="@color/blue"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_margin="10dp"
         />
 
@@ -106,7 +106,7 @@
         android:layout_below="@+id/sign_in_button"
         android:layout_margin="20dp"
         android:text="@string/or_label"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:gravity="center"
         android:textColor="@color/light_gray"
         android:textStyle="bold"
@@ -127,7 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
-            android:text="Sign up with Google"
+            android:text="@string/sign_up_with_google_button"
             android:textColor="@color/black"
             app:icon="@drawable/gmail"
             app:iconTint="@null"
@@ -140,7 +140,7 @@
             android:backgroundTint="@color/white"
             app:icon="@drawable/facebook"
             app:iconTint="@null"
-            android:text="Sign up with Facebook"
+            android:text="@string/sign_up_with_facebook_button"
             android:textColor="@color/black"
             app:iconSize="24dp"
             />
@@ -156,7 +156,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account?"
+            android:text="@string/don_t_have_an_account_textView"
             android:textColor="@color/light_gray"
             android:textStyle="bold"
             android:textSize="20dp"
@@ -167,7 +167,7 @@
             android:id="@+id/sign_up_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="@string/sign_up_textView"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginStart="8dp"

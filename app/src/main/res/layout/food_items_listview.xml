@@ -4,20 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
-        <!-- Food item 1 -->
+        android:layout_marginBottom="12dp"
+        >
+        <!-- Food item layout -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <!-- Insert picture -->
             <ImageView
-                android:id="@+id/pizza_image"
+                android:id="@+id/food_image"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 tools:src="@drawable/sausage_pizza"
@@ -25,46 +28,49 @@
                 />
             <!-- Name of the food, Ingredients, Price -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
                 <TextView
-                    android:id="@+id/pizza_name"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/food_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:text="Sausage Pizza"
                     android:textColor="@color/black"
                     android:textSize="20dp"/>
                 <TextView
-                    android:id="@+id/pizza_description"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/food_description"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="Pizza + Tomato sauce + Mozzarella Cheese + Oregano"
+                    tools:text="Pizza + Tomato sauce + Mozzarella Cheese "
                     android:textColor="@color/light_gray"
                     android:textStyle="bold"
                     />
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
                     <TextView
-                        android:id="@+id/pizza_price"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/food_price"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         tools:text="45.000"
                         android:textColor="@color/black"
                         android:textStyle="bold"/>
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/pizza_add_button"
+                        android:id="@+id/food_add_button"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         app:icon= "@drawable/baseline_add_24"
                         android:backgroundTint="@color/green"
                         android:textColor="@color/white"
-                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
                         android:padding="12dp"
                         />
-                </RelativeLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

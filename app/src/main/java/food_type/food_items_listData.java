@@ -1,10 +1,10 @@
 package food_type;
 
-public class pizza_items_listData {
+public class food_items_listData {
      private int imageResource;
      private String name, description, price;
 
-    public pizza_items_listData(int imageResource, String price, String name, String description) {
+    public food_items_listData(int imageResource, String price, String name, String description) {
         this.imageResource = imageResource;
         this.price = price;
         this.name = name;

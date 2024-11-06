@@ -1,13 +1,9 @@
 package food_type;
 
-import android.app.ActivityManager;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,13 +21,15 @@ public class pizza_listview extends AppCompatActivity {
         setContentView(R.layout.activity_pizza_listview);
 
         RecyclerView recyclerView = findViewById(R.id.pizza_recycler_view);
-        List<pizza_items_listData> pizzaItemsListDataList = new ArrayList<pizza_items_listData>();
+        List<food_items_listData> pizzaItemsListDataList = new ArrayList<food_items_listData>();
 
-        pizzaItemsListDataList.add(new pizza_items_listData(R.drawable.sausage_pizza,"45.000", "Sausage Pizza", "Pizza + Tomato sauce + Mozzarella Cheese + Oregano"));
-
-
+        pizzaItemsListDataList.add(new food_items_listData(R.drawable.sausage_pizza,"45.000", "Sausage Pizza", "Pizza + Tomato sauce + Mozzarella Cheese + Oregano"));
+        pizzaItemsListDataList.add(new food_items_listData(R.drawable.seafood_pizza,"139.000", "Seafood Pizza", "Shrimps + Crab sticks + Tomatoes + Sweet corns + Mozzarella Cheese"));
+        pizzaItemsListDataList.add(new food_items_listData(R.drawable.pepperoni_pizza,"119.000", "Pepperoni Pizza", "Pizza + Pepperoni + Mozzarella cheese"));
+        pizzaItemsListDataList.add(new food_items_listData(R.drawable.supream_meat_lover_pizza,"139.000", "Supreme Meat Lover's", "Bacon + Sausage + Beef + Ham + Pepperoni + Mozzarella cheese"));
+        pizzaItemsListDataList.add(new food_items_listData(R.drawable.shrimp_scampi_pizza,"139.000", "Shrimp Scampi", "Shrimps + Onions + Garlic butter sauce +  Mozzarella cheese"));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new pizza_Adapter(this,pizzaItemsListDataList));
+        recyclerView.setAdapter(new food_Adapter(this,pizzaItemsListDataList));
 
     }
 }
