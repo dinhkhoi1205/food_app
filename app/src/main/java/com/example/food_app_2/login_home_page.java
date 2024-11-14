@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -17,6 +18,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -27,13 +34,6 @@ public class login_home_page extends AppCompatActivity {
     MaterialButton button_signIn;
 
     TextInputEditText textInput_password;
-
-    SharedPreferences sharedPreferences;
-    //Create share preference for each edit text
-    private static final String SHARED_PREF_NAME = "mypref";
-    private static final String KEY_USERNAME = "username";
-    private static final String KEY_PASSWORD = "password";
-
 
 
     @Override
@@ -46,40 +46,85 @@ public class login_home_page extends AppCompatActivity {
         textView_signUp = findViewById(R.id.sign_up_label);
         button_signIn = findViewById(R.id.sign_in_button);
 
-        sharedPreferences =getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
-
-
-        //Press sign in button will move to app home page
         button_signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String enterUserName = editText_userName_fill.getText().toString();
-                String enterPassword = Objects.requireNonNull(textInput_password.getText()).toString();
+                if (!validUserName() | !validPassWord()){
 
-                if (enterUserName.isEmpty()|| enterPassword.isEmpty()) {
-                    Toast.makeText(login_home_page.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                }
-
-                String saveUsername = sharedPreferences.getString(KEY_USERNAME,null);
-                String savePassword = sharedPreferences.getString(KEY_PASSWORD,null);
-                if(enterPassword.equals(savePassword)&& enterUserName.equals(saveUsername)){
-                    Intent intent = new Intent(login_home_page.this,app_home_page.class);
-                    startActivity(intent);
-                }
-                else
-                {
-                    Toast.makeText(login_home_page.this, "Invalid password or username", Toast.LENGTH_SHORT).show();
+                } else {
+                    checkUser();
                 }
             }
         });
-        //Press sign up text view will move to registration page
+
         textView_signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(login_home_page.this,registration_screen.class);
+                Intent intent = new Intent(login_home_page.this, registration_screen.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    public Boolean validUserName(){
+        String val = editText_userName_fill.getText().toString();
+        if (val.isEmpty()){
+            editText_userName_fill.setError("Username must be fill");
+            return false;
+        }
+        else
+        {
+            editText_userName_fill.setError(null);
+            return true;
+        }
+    }
+
+    public Boolean validPassWord(){
+        String val = Objects.requireNonNull(textInput_password.getText()).toString();
+        if (val.isEmpty()){
+            textInput_password.setError("Password must be fill");
+            return false;
+        }
+        else
+        {
+            textInput_password.setError(null);
+            return true;
+        }
+    }
+
+    public void checkUser(){
+        String userName = editText_userName_fill.getText().toString().trim();
+        String userPassword = Objects.requireNonNull(textInput_password.getText()).toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+        Query checkUserDataBase = reference.orderByChild("userName").equalTo(userName);
+
+        checkUserDataBase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    editText_userName_fill.setError(null);
+                    String passwordFromDB = snapshot.child(userName).child("password").getValue(String.class);
+
+                    if(Objects.equals(passwordFromDB, userPassword)){
+                        editText_userName_fill.setError(null);
+                        Intent intent = new Intent(login_home_page.this, app_home_page.class);
+                        startActivity(intent);
+                    } else{
+                        textInput_password.setError("Invalid Password");
+                        textInput_password.requestFocus();
+                    }
+                } else{
+                    editText_userName_fill.setError("User does not exist");
+                    editText_userName_fill.requestFocus();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
     }
+
 }

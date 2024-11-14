@@ -7,16 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".registration_screen"
     >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/return_button"
                 android:layout_width="wrap_content"
@@ -97,88 +92,12 @@
                 android:background="@drawable/dark_line_rounded"
                 />
 
-            <!-- Fill address 1 section -->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/confirm_password"
-                android:hint="Address line 1"
-                android:id="@+id/adress1"
-                android:textColorHint="@color/black"
-                android:padding="20dp"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_home_24"
-                android:drawablePadding="20dp"
-                android:background="@drawable/dark_line_rounded"
-                />
-
-            <!-- Fill address 2 section -->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/adress1"
-                android:hint="Address line 2 (Optional)"
-                android:id="@+id/adress2"
-                android:textColorHint="@color/black"
-                android:padding="20dp"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_home_24"
-                android:drawablePadding="20dp"
-                android:background="@drawable/dark_line_rounded"
-                />
-
-
-            <!-- Fill coutntry section -->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/adress2"
-                android:hint="Country"
-                android:id="@+id/country"
-                android:textColorHint="@color/black"
-                android:padding="20dp"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_flag_24"
-                android:drawablePadding="20dp"
-                android:background="@drawable/dark_line_rounded"
-                />
-
-            <!-- Fill city section -->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/country"
-                android:hint="City"
-                android:id="@+id/city"
-                android:textColorHint="@color/black"
-                android:padding="20dp"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_location_city_24"
-                android:drawablePadding="20dp"
-                android:background="@drawable/dark_line_rounded"
-                />
-
-            <!-- Fill phone number section -->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/city"
-                android:hint="Phone number"
-                android:id="@+id/phonenumber"
-                android:textColorHint="@color/black"
-                android:padding="20dp"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_phone_24"
-                android:drawablePadding="20dp"
-                android:background="@drawable/dark_line_rounded"
-                />
-
             <!-- Checkbox for agree -->
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="I agree to the Terms and Condition"
-                android:layout_below="@id/city"
+                android:layout_below="@id/confirm_password"
                 android:textColor="@color/black"
                 android:layout_margin="10dp"
                 android:textSize="20dp"
@@ -200,5 +119,4 @@
                 android:textSize="30dp"
                 />
         </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

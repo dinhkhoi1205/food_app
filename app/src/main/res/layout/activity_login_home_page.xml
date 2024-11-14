@@ -20,6 +20,7 @@
         android:textStyle="bold"
         />
 
+    <!-- Username label -->
     <TextView
         android:id="@+id/username_label"
         android:layout_width="match_parent"
@@ -32,6 +33,7 @@
         android:layout_marginLeft="10dp"
         />
 
+    <!-- Username edittext -->
     <EditText
         android:id="@+id/username_edittext"
         android:layout_width="match_parent"
@@ -43,6 +45,7 @@
         android:padding="10dp"
         />
 
+    <!-- Password label -->
     <TextView
         android:id="@+id/password_label"
         android:layout_width="match_parent"
@@ -55,7 +58,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         />
-
+    <!-- Password input field -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password_edittext"
         android:layout_width="match_parent"
@@ -76,6 +79,7 @@
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Forgot password label -->
     <TextView
         android:id="@+id/forgot_password_label"
         android:layout_width="match_parent"
