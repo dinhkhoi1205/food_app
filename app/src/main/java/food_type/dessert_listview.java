@@ -19,6 +19,7 @@ import java.util.List;
 public class dessert_listview extends AppCompatActivity implements RecyclerViewInterface {
 
     List<food_items_listData> dessertItemsListDataList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,41 +45,8 @@ public class dessert_listview extends AppCompatActivity implements RecyclerViewI
         intent.putExtra("food_price",selectedDessert.getPrice());
         intent.putExtra("food_description",selectedDessert.getDescription());
         intent.putExtra("food_image",selectedDessert.getImageResource());
-
-        ArrayList<String> options = new ArrayList<>();
-        ArrayList<String> prices = new ArrayList<>();
-        ArrayList<String> titles = new ArrayList<>();
-
-        if("Tiramisu cake".equals(selectedDessert.getName())){
-            titles.add("Size");
-            options.add("Slice");
-            options.add("Half cake");
-            options.add("Full cake");
-            prices.add("60.000");
-            prices.add("240.000");
-            prices.add("420.000");
-        } else if("Jelly cake".equals(selectedDessert.getName())){
-            titles.add("Flavor");
-            options.add("Mango");
-            options.add("Strawberry");
-            options.add("Matcha");
-            prices.add("60.000");
-            prices.add("60.000");
-            prices.add("60.000");
-        } else if ("Chocolate ice cream".equals(selectedDessert.getName()) || "Avocado ice cream".equals(selectedDessert.getName()) ||
-                "Flan cake".equals(selectedDessert.getName())){
-            titles.add("Topping");
-            options.add("Coconut Jelly");
-            options.add("Bubble");
-            options.add("Aloe Vera");
-            prices.add("+3.000");
-            prices.add("+3.000");
-            prices.add("+3.000");
-        }
+        intent.putExtra("food_type", "desserts");
         intent.putExtra("food_name",selectedDessert.getName());
-        intent.putStringArrayListExtra("titles",titles);
-        intent.putStringArrayListExtra("options", options);
-        intent.putStringArrayListExtra("prices", prices);
         startActivity(intent);
     }
 }

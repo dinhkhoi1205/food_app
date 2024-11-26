@@ -34,6 +34,7 @@ public class milktea_listview extends AppCompatActivity implements RecyclerViewI
         milkTeaItemsListDataList.add(new food_items_listData(R.drawable.mango_milk_tea,"61.000", "Mango Milk Tea", "Green milk tea combine with mango syrup"));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new food_Adapter(this,milkTeaItemsListDataList,this));
+
     }
 
     @Override
@@ -44,45 +45,8 @@ public class milktea_listview extends AppCompatActivity implements RecyclerViewI
         intent.putExtra("food_price",selectedMilkTea.getPrice());
         intent.putExtra("food_description",selectedMilkTea.getDescription());
         intent.putExtra("food_image",selectedMilkTea.getImageResource());
-
-        ArrayList<String> options = new ArrayList<>();
-        ArrayList<String> prices = new ArrayList<>();
-        ArrayList<String> titles = new ArrayList<>();
-
-            //Title 1: Choose size
-            titles.add("Size");
-            options.add("Size M");
-            prices.add("");
-            options.add("Size L");
-            prices.add("+8.000");
-
-            //Title 2: Choose sugar
-            titles.add("Choose sugar");
-            options.add("Normal");
-            prices.add("");
-            options.add("Less sugar");
-            prices.add("");
-
-            //Title 3: Choose ice
-            titles.add("Choose ice");
-            options.add("50% ice");
-            prices.add("");
-            options.add("70% ice");
-
-            //Title 4: Topping have
-            titles.add("Topping have");
-            options.add("White bubble");
-            prices.add("");
-            options.add("Black bubble");
-            prices.add("");
-            options.add("Don't add bubble");
-            prices.add("");
-
-
+        intent.putExtra("food_type", "milk tea");
         intent.putExtra("food_name",selectedMilkTea.getName());
-        intent.putStringArrayListExtra("titles",titles);
-        intent.putStringArrayListExtra("options", options);
-        intent.putStringArrayListExtra("prices", prices);
         startActivity(intent);
     }
 }

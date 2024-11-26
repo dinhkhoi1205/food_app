@@ -3,21 +3,18 @@
   <item
       android:title="@string/home_icon"
       android:icon="@drawable/baseline_home_24"
-      android:id="@+id/home"
-      android:enabled="true"
+      android:id="@+id/home_bottom"
       />
 
     <item
         android:title="@string/cart_icon"
         android:icon="@drawable/baseline_shopping_cart_24"
-        android:id="@+id/cart"
-        android:enabled="true"
+        android:id="@+id/cart_bottom"
         />
 
     <item
         android:title="@string/person_icon"
         android:icon="@drawable/baseline_person_24"
-        android:id="@+id/person"
-        android:enabled="true"
+        android:id="@+id/person_bottom"
         />
 </menu>

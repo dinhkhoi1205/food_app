@@ -43,22 +43,8 @@ public class rice_listview extends AppCompatActivity implements RecyclerViewInte
         intent.putExtra("food_price",selectedRice.getPrice());
         intent.putExtra("food_description",selectedRice.getDescription());
         intent.putExtra("food_image",selectedRice.getImageResource());
-
-        ArrayList<String> options = new ArrayList<>();
-        ArrayList<String> prices = new ArrayList<>();
-        ArrayList<String> titles = new ArrayList<>();
-
-
-        titles.add("New Modifier Set");
-        options.add("Extra Rice");
-        prices.add("5.000");
-        options.add("Egg");
-        prices.add("12.000");
-
+        intent.putExtra("food_type", "rice");
         intent.putExtra("food_name",selectedRice.getName());
-        intent.putStringArrayListExtra("titles",titles);
-        intent.putStringArrayListExtra("options", options);
-        intent.putStringArrayListExtra("prices", prices);
         startActivity(intent);
     }
 }

@@ -43,35 +43,8 @@ public class burger_listview extends AppCompatActivity implements RecyclerViewIn
         intent.putExtra("food_price",selectedBurger.getPrice());
         intent.putExtra("food_description",selectedBurger.getDescription());
         intent.putExtra("food_image",selectedBurger.getImageResource());
-
-        ArrayList<String> options = new ArrayList<>();
-        ArrayList<String> prices = new ArrayList<>();
-        ArrayList<String> titles = new ArrayList<>();
-
-        if("Shrimp Burger".equals(selectedBurger.getName())){
-            titles.add("Add-on");
-            options.add("Rice");
-            options.add("Omelette");
-            prices.add("7.000");
-            prices.add("7.000");
-        } else if("Bulgogi Burger".equals(selectedBurger.getName())){
-            titles.add("Add-on");
-            options.add("Cheese (1 slice)");
-            options.add("Package (Cheese Taste)");
-            prices.add("7.000");
-            prices.add("7.000");
-        } else if ("Mozzarella Burger".equals(selectedBurger.getName()) || "Beef Burger".equals(selectedBurger.getName()) || "Fish Burger".equals(selectedBurger.getName())){
-            titles.add("Add-on");
-            options.add("Cheese (1 slice)");
-            options.add("Egg");
-            prices.add("7.000");
-            prices.add("7.000");
-        }
-
+        intent.putExtra("food_type", "burgers");
         intent.putExtra("food_name",selectedBurger.getName());
-        intent.putStringArrayListExtra("titles",titles);
-        intent.putStringArrayListExtra("options", options);
-        intent.putStringArrayListExtra("prices", prices);
         startActivity(intent);
     }
 }

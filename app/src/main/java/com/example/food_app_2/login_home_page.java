@@ -15,6 +15,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
@@ -35,6 +37,9 @@ public class login_home_page extends AppCompatActivity {
 
     TextInputEditText textInput_password;
 
+    GoogleSignInOptions googleSignInOptions;
+    MaterialButton googleBtn;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

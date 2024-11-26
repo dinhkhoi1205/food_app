@@ -20,8 +20,11 @@
     <string name="plus">+</string>
     <string name="username_enter_hint">Enter your username</string>
     <string name="enter_password_hint">Enter password</string>
-    <string name="sign_up_with_google_button">Sign up with Google</string>
-    <string name="sign_up_with_facebook_button">Sign up with Facebook</string>
+    <string name="sign_in_with_google_button">Sign in with Google</string>
+    <string name="sign_in_with_facebook_button">Sign in with Facebook</string>
     <string name="don_t_have_an_account_textView">Don\'t have an account?</string>
     <string name="sign_up_textView">Sign up</string>
+    <string name="my_cart_cartListView_Cart">My cart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

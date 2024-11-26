@@ -127,11 +127,12 @@
         >
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/google_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
-            android:text="@string/sign_up_with_google_button"
+            android:text="@string/sign_in_with_google_button"
             android:textColor="@color/black"
             app:icon="@drawable/gmail"
             app:iconTint="@null"
@@ -144,7 +145,7 @@
             android:backgroundTint="@color/white"
             app:icon="@drawable/facebook"
             app:iconTint="@null"
-            android:text="@string/sign_up_with_facebook_button"
+            android:text="@string/sign_in_with_facebook_button"
             android:textColor="@color/black"
             app:iconSize="24dp"
             />
