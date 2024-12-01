@@ -3,6 +3,7 @@ package bottom_nav_fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,6 +19,9 @@ import food_type.dessert_listview;
 import food_type.milktea_listview;
 import food_type.pizza_listview;
 import food_type.rice_listview;
+import restaurant.kfc_restaurant_list_view;
+import restaurant.popeyes_restaurant_list_view;
+import restaurant.star_buck_list_view;
 
 
 public class home_screen extends Fragment {
@@ -34,6 +38,9 @@ public class home_screen extends Fragment {
         FrameLayout rice_frame_type = view.findViewById(R.id.food_frame_4);
         FrameLayout dessert_frame_type = view.findViewById(R.id.food_frame_5);
 
+        CardView kfc_cardView = view.findViewById(R.id.kfc_card_view);
+        CardView pop_cardView = view.findViewById(R.id.pop_card_view);
+        CardView star_bucks_cardView = view.findViewById(R.id.star_buck_card_view);
         pizza_frame_type.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +77,30 @@ public class home_screen extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), dessert_listview.class);
+                startActivity(intent);
+            }
+        });
+
+        kfc_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), kfc_restaurant_list_view.class);
+                startActivity(intent);
+            }
+        });
+
+        pop_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), popeyes_restaurant_list_view.class);
+                startActivity(intent);
+            }
+        });
+
+        star_bucks_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), star_buck_list_view.class);
                 startActivity(intent);
             }
         });

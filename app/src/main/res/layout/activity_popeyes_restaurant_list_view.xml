@@ -5,14 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="food_type.burger_listview">
+    tools:context="restaurant.popeyes_restaurant_list_view">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/burger_recycler_view"
+        android:id="@+id/pop_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/food_items_listview"
-        android:paddingTop="40dp"
-        />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="40dp"
+        tools:listitem="@layout/restaurant_items_list_view"/>
 
 </RelativeLayout>

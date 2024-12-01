@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="restaurant.restaurant_detail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/restaurant_food_image_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="420dp">
+            <ImageView
+                android:id="@+id/restaurant_food_image_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@drawable/sausage_pizza"
+                android:scaleType="centerCrop"/>
+
+            <ImageButton
+                android:id="@+id/return_button_restaurant_detail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="top"
+                android:background="@drawable/white_circle_button"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:layout_margin="16dp"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                >
+                <TextView
+                    android:id="@+id/restaurant_food_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Sausage Pizza"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/restaurant_food_detail_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="45.000"
+                    android:layout_marginEnd="20dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/restaurant_food_description_detail"
+                android:layout_margin="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_gray"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                tools:text="Pizza + Tomato sauce + Mozzarella Cheese + Oregano"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_decrement_restaurant_detail"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="decrement_restaurant"
+                app:icon= "@drawable/baseline_remove_24"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:padding="12dp"
+                />
+
+            <TextView
+                android:id="@+id/text_quantity_restaurant_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                android:gravity="center"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_increment_restaurant_detail"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="increment_restaurant"
+                app:icon= "@drawable/baseline_add_24"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:padding="12dp"
+                />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_item_button_restaurant_detail"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            tools:text="Text"
+            android:backgroundTint="@color/green"
+            android:textColor="@color/white"
+            android:layout_margin="20sp"
+            />
+    </LinearLayout>
+</RelativeLayout>

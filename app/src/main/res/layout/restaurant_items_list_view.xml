@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="180dp"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="12dp" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/food_restaurant_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_add_restaurant"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@color/green"
+                        app:icon="@drawable/baseline_add_24"
+                        android:textSize="20sp"
+                        android:padding="12dp"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginStart="110dp"
+                        />
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/food_name_restaurant_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Burger Big Mac"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    />
+                <TextView
+                    android:id="@+id/food_price_restaurant_list_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="119.000"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="4dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+</RelativeLayout>

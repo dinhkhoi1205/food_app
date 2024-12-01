@@ -75,7 +75,6 @@ public class food_type_detail extends AppCompatActivity {
         foodPrice.setText(priceDetail);
         foodImage.setImageResource(imageDetail);
 
-        // Parse base price from foodPrice TextView, if it's not empty
         if (priceDetail != null && !priceDetail.isEmpty()) {
             try {
                 basePrice = Double.parseDouble(priceDetail);
