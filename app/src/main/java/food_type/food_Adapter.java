@@ -1,22 +1,24 @@
 package food_type;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food_app_2.R;
+import com.example.food_app_2.RecyclerViewInterface;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class food_Adapter extends RecyclerView.Adapter<food_viewHolder>{
     private final RecyclerViewInterface recyclerViewInterFace;
     Context context;
     List<food_items_listData> foodItemsListData;
+
     public food_Adapter(Context context, List<food_items_listData> foodItemsListData,
                         RecyclerViewInterface recyclerViewInterFace ) {
         this.context = context;
@@ -44,5 +46,6 @@ public class food_Adapter extends RecyclerView.Adapter<food_viewHolder>{
     public int getItemCount() {
         return foodItemsListData.size();
     }
+
 }
 

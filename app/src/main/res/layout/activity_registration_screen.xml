@@ -9,15 +9,16 @@
     >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            tools:ignore="UselessParent">
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/return_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/blue"
-                android:text="Back"
+                android:text="@string/back_button_registrar"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
             <!-- Sign up title -->
@@ -25,9 +26,9 @@
                 android:id="@+id/signupTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign up"
+                android:text="@string/sign_up_text_view"
                 android:gravity="center"
-                android:textSize="35dp"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 android:layout_margin="25dp"
                 />
@@ -36,13 +37,12 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/signupTitle"
                 android:hint="@string/username_label"
                 android:id="@+id/username"
                 android:textColorHint="@color/black"
                 android:padding="20dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawableStart="@drawable/baseline_person_24"
                 android:drawablePadding="20dp"
                 android:background="@drawable/dark_line_rounded"
                 />
@@ -51,13 +51,27 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/username"
-                android:hint="Email"
+                android:hint="@string/email_hint_editText"
                 android:id="@+id/email"
                 android:textColorHint="@color/black"
                 android:padding="20dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawableStart="@drawable/baseline_email_24"
+                android:drawablePadding="20dp"
+                android:background="@drawable/dark_line_rounded"
+                />
+
+            <!-- Fill phone section -->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_number_hint"
+                android:id="@+id/phone"
+                android:digits="0123456789"
+                android:textColorHint="@color/black"
+                android:padding="20dp"
+                android:layout_margin="10dp"
+                android:drawableStart="@drawable/baseline_phone_24"
                 android:drawablePadding="20dp"
                 android:background="@drawable/dark_line_rounded"
                 />
@@ -66,13 +80,12 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/email"
-                android:hint="Password"
+                android:hint="@string/password_hint_editText"
                 android:id="@+id/password_toggle"
                 android:textColorHint="@color/black"
                 android:padding="20dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_lock_24"
+                android:drawableStart="@drawable/baseline_lock_24"
                 android:drawablePadding="20dp"
                 android:background="@drawable/dark_line_rounded"
                 />
@@ -81,13 +94,12 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/password_toggle"
-                android:hint="Confirm password"
+                android:hint="@string/confirm_password_hint_editText"
                 android:id="@+id/confirm_password"
                 android:textColorHint="@color/black"
                 android:padding="20dp"
                 android:layout_margin="10dp"
-                android:drawableLeft="@drawable/baseline_lock_24"
+                android:drawableStart="@drawable/baseline_lock_24"
                 android:drawablePadding="20dp"
                 android:background="@drawable/dark_line_rounded"
                 />
@@ -96,11 +108,10 @@
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I agree to the Terms and Condition"
-                android:layout_below="@id/confirm_password"
+                android:text="@string/i_agree_to_the_terms_and_condition_checkBox"
                 android:textColor="@color/black"
                 android:layout_margin="10dp"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:padding="20dp"
                 android:id="@+id/checkbox"
@@ -111,12 +122,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/signupButton"
-                android:text="Register"
-                android:layout_below="@+id/checkbox"
+                android:text="@string/register_button"
                 android:backgroundTint="@color/blue"
                 android:textColor="@color/white"
                 android:layout_margin="20dp"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 />
         </LinearLayout>
 </RelativeLayout>

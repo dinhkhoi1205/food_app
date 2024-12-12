@@ -11,7 +11,7 @@ import com.example.food_app_2.R;
 
 import java.util.List;
 
-import food_type.RecyclerViewInterface;
+import com.example.food_app_2.RecyclerViewInterface;
 
 public class restaurant_Adapter extends RecyclerView.Adapter<restaurant_viewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;

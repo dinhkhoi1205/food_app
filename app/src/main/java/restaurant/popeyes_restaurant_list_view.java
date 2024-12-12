@@ -5,9 +5,6 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,7 +13,7 @@ import com.example.food_app_2.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import food_type.RecyclerViewInterface;
+import com.example.food_app_2.RecyclerViewInterface;
 
 public class popeyes_restaurant_list_view extends AppCompatActivity implements RecyclerViewInterface {
     private List<restaurant_items_listData> popeyesListData = new ArrayList<>();

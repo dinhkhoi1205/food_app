@@ -2,6 +2,8 @@ package food_type;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -32,6 +34,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
+import assest.CartDBHelper;
+
 public class food_type_detail extends AppCompatActivity {
 
     ImageView foodImage;
@@ -48,11 +52,13 @@ public class food_type_detail extends AppCompatActivity {
 
     int count = 0;
     double basePrice = 0.0;
+    CartDBHelper cartDBHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_food_type_detail);
+        cartDBHelper = new CartDBHelper(this);
 
         foodImage = findViewById(R.id.food_image_detail);
         foodName = findViewById(R.id.food_detail_name);
@@ -69,6 +75,7 @@ public class food_type_detail extends AppCompatActivity {
         String descriptionDetail = intent.getStringExtra("food_description");
         String foodType = getIntent().getStringExtra("food_type");
         int imageDetail = intent.getIntExtra("food_image", 0);
+
 
         foodName.setText(nameDetail);
         foodDescription.setText(descriptionDetail);
@@ -116,9 +123,23 @@ public class food_type_detail extends AppCompatActivity {
         });
 
         textQuantity.setText(String.valueOf(count));
-        addItemButton.setOnClickListener(v -> {
-            Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
-        });
+            addItemButton.setOnClickListener(v -> {
+                if (count != 0) {
+                    if(cartDBHelper.isItemInCart(nameDetail)){
+                        Toast.makeText(this, "You already have this item in cart", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        boolean checkInsertCartData = cartDBHelper.cartInsert(nameDetail, basePrice, count);
+                        if (checkInsertCartData) {
+                            Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+                else
+                    Toast.makeText(this, "You must set quantity in order to order ", Toast.LENGTH_SHORT).show();
+            });
+
+
     }
 
 

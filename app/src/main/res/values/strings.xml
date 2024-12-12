@@ -16,15 +16,21 @@
     <!-- Home page screen -->
     <string name="deliver_label">Deliver to</string>
     <string name="name_street_label">27/70/50 Street 9, Ward 16, Go Vap Distress</string>
+    <string name="what_would_you_like_to_order_text_view_home_page">What would you like to order</string>
+    <string name="hello_text_view_home_screen">Hello</string>
+
 
     <string name="plus">+</string>
-    <string name="username_enter_hint">Enter your username</string>
+
+    <!-- Log in layout -->
+    <string name="username_enter_hint">Enter your email</string>
     <string name="enter_password_hint">Enter password</string>
     <string name="sign_in_with_google_button">Sign in with Google</string>
     <string name="sign_in_with_facebook_button">Sign in with Facebook</string>
     <string name="don_t_have_an_account_textView">Don\'t have an account?</string>
     <string name="sign_up_textView">Sign up</string>
     <string name="my_cart_cartListView_Cart">My cart</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -33,4 +39,24 @@
     <string name="kfc_thong_nhat_address">KFC - Thong Nhat</string>
     <string name="popeyes_le_duc_tho_address">Popeyes - Le Duc Tho</string>
     <string name="star_buck_quang_trung_address">Starbucks - Quang Trung</string>
+    <string name="place_your_order">Place your order</string>
+    <string name="clear_order_button">Clear order</string>
+
+    <!--Registration layout-->
+    <string name="back_button_registrar">Back</string>
+    <string name="sign_up_text_view">Sign up</string>
+    <string name="email_hint_editText">Email</string>
+    <string name="password_hint_editText">Password</string>
+    <string name="confirm_password_hint_editText">Confirm password</string>
+    <string name="i_agree_to_the_terms_and_condition_checkBox">I agree to the Terms and Condition</string>
+    <string name="register_button">Register</string>
+    <string name="phone_number_hint">Phone number</string>
+
+    <!--Custom enter address dialog -->
+    <string name="enter_your_current_location_text_view">Enter your current location</string>
+    <string name="yes_dialog_button">Yes</string>
+    <string name="no_dialog_button">No</string>
+
+
+
 </resources>

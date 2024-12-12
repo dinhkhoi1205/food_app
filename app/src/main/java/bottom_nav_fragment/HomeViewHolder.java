@@ -1,4 +1,4 @@
-package food_type;
+package bottom_nav_fragment;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -9,20 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food_app_2.R;
 import com.example.food_app_2.RecyclerViewInterface;
-import com.google.android.material.button.MaterialButton;
 
-public class food_viewHolder extends RecyclerView.ViewHolder{
+public class HomeViewHolder extends RecyclerView.ViewHolder {
     ImageView imageView;
-    TextView nameView, descriptionView, priceView;
-
-    MaterialButton addButton;
-    public food_viewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
+    TextView nameTextView;
+    public HomeViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
         super(itemView);
-        imageView = itemView.findViewById(R.id.food_image);
-        nameView = itemView.findViewById(R.id.food_name);
-        descriptionView = itemView.findViewById(R.id.food_description);
-        priceView = itemView.findViewById(R.id.food_price);
-        addButton = itemView.findViewById(R.id.food_add_button);
+        imageView = itemView.findViewById(R.id.image_home_item);
+        nameTextView = itemView.findViewById(R.id.food_name_home_item);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

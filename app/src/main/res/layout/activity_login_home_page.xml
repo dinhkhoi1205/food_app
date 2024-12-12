@@ -16,7 +16,7 @@
         android:text="@string/sign_in_label"
         android:gravity="center"
         android:layout_margin="20dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         />
 
@@ -29,8 +29,8 @@
         android:layout_below="@+id/sign_in_label"
         android:textColor="@color/light_gray"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
         />
 
     <!-- Username edittext -->
@@ -54,9 +54,9 @@
         android:layout_below="@+id/username_edittext"
         android:textColor="@color/light_gray"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         />
     <!-- Password input field -->
     <com.google.android.material.textfield.TextInputLayout
@@ -132,6 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
+            android:textSize="20sp"
             android:text="@string/sign_in_with_google_button"
             android:textColor="@color/black"
             app:icon="@drawable/gmail"
@@ -144,6 +145,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
             app:icon="@drawable/facebook"
+            android:textSize="20sp"
             app:iconTint="@null"
             android:text="@string/sign_in_with_facebook_button"
             android:textColor="@color/black"
@@ -164,8 +166,8 @@
             android:text="@string/don_t_have_an_account_textView"
             android:textColor="@color/light_gray"
             android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_marginLeft="60dp"
+            android:textSize="20sp"
+            android:layout_marginStart="60dp"
             />
 
         <TextView
@@ -176,7 +178,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginStart="8dp"
-            android:textSize="20dp"
+            android:textSize="20sp"
             />
     </LinearLayout>
 

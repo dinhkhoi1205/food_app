@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.food_app_2.R;
 import com.google.android.material.button.MaterialButton;
 
-import food_type.RecyclerViewInterface;
+import com.example.food_app_2.RecyclerViewInterface;
 
 public class restaurant_viewHolder extends RecyclerView.ViewHolder {
     ImageView foodResImg;

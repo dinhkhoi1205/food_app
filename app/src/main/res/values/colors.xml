@@ -10,4 +10,5 @@
     <color name="light_black">#454545</color>
     <color name="orange">#FFA24C</color>
     <color name="green">#47e51c</color>
+    <color name="red">#FF0000</color>
 </resources>

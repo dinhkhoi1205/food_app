@@ -5,11 +5,7 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food_app_2.R;
@@ -17,10 +13,7 @@ import com.example.food_app_2.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import food_type.RecyclerViewInterface;
-import food_type.food_Adapter;
-import food_type.food_type_detail;
-import food_type.pizza_listview;
+import com.example.food_app_2.RecyclerViewInterface;
 
 public class kfc_restaurant_list_view extends AppCompatActivity implements RecyclerViewInterface {
     private List<restaurant_items_listData> kfcItemsListData = new ArrayList<>();

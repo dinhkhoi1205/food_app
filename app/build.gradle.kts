@@ -47,6 +47,8 @@ dependencies {
     implementation(libs.engage.core)
     implementation(libs.firebase.database)
     implementation(libs.firebase.storage)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.google.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

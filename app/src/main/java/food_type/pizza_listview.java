@@ -2,8 +2,6 @@ package food_type;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food_app_2.R;
+import com.example.food_app_2.RecyclerViewInterface;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class pizza_listview extends AppCompatActivity implements RecyclerViewInterface  {
+public class pizza_listview extends AppCompatActivity implements RecyclerViewInterface {
 
     private List<food_items_listData> pizzaItemsListDataList;
     @Override

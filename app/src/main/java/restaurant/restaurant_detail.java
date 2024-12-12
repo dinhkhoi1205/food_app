@@ -1,6 +1,8 @@
 package restaurant;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +22,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.Objects;
 
+import assest.CartDBHelper;
 import food_type.burger_listview;
 import food_type.dessert_listview;
 import food_type.food_type_detail;
@@ -41,6 +44,7 @@ public class restaurant_detail extends AppCompatActivity {
 
     int count = 0;
     double basePrice = 0.0;
+    CartDBHelper cartDBHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +58,7 @@ public class restaurant_detail extends AppCompatActivity {
         resReturnButton = findViewById(R.id.return_button_restaurant_detail);
         resTextQuantity = findViewById(R.id.text_quantity_restaurant_detail);
         resAddItemButton = findViewById(R.id.add_item_button_restaurant_detail);
+        cartDBHelper = new CartDBHelper(this);
 
         Intent intent = getIntent();
         String resNameDetail = intent.getStringExtra("restaurant_food_name");
@@ -101,9 +106,23 @@ public class restaurant_detail extends AppCompatActivity {
         });
 
         resTextQuantity.setText(String.valueOf(count));
-        resAddItemButton.setOnClickListener(v -> {
-            Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
-        });
+            resAddItemButton.setOnClickListener(v -> {
+                if(count != 0) {
+                    if(cartDBHelper.isItemInCart(resNameDetail)){
+                        Toast.makeText(this, "You already have this item in cart", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        boolean checkInsertCartData = cartDBHelper.cartInsert(resNameDetail, basePrice, count);
+                        if (checkInsertCartData) {
+                            Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+                else
+                    Toast.makeText(this, "You must set quantity in order to order", Toast.LENGTH_SHORT).show();
+            });
+
+
     }
 
     public void increment_restaurant(View v){
