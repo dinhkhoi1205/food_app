@@ -1,6 +1,7 @@
 package restaurant;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -22,7 +23,7 @@ public class kfc_restaurant_list_view extends AppCompatActivity implements Recyc
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_kfc_restaurant_list_view);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         RecyclerView recyclerView = findViewById(R.id.kfc_recycler_view);
         kfcItemsListData = new ArrayList<>();
         kfcItemsListData.add(new restaurant_items_listData(R.drawable.kfc_item_1,"127.000","Combo Group 2",

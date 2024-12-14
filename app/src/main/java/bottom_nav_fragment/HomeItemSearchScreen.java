@@ -1,9 +1,11 @@
 package bottom_nav_fragment;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -37,12 +39,13 @@ public class HomeItemSearchScreen extends AppCompatActivity implements RecyclerV
      List<HomeItem> homeItemList;
     HomeItemAdapter homeItemAdapter;
      SearchView searchView;
+     TextView noResultText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home_item_seach_screen);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         backButton = findViewById(R.id.back_arrow_home_item_view);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,11 +128,14 @@ public class HomeItemSearchScreen extends AppCompatActivity implements RecyclerV
             if(item.getName().toLowerCase().contains(text.toLowerCase()))
                 filterdList.add(item);
         }
-
+        noResultText = findViewById(R.id.no_results_text);
         if(filterdList.isEmpty()){
-            Toast.makeText(this, "Can not find the food", Toast.LENGTH_SHORT).show();
+            noResultText.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
         }
         else {
+            noResultText.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
             homeItemAdapter.setFilteredList(filterdList);
         }
     }
@@ -156,7 +162,6 @@ public class HomeItemSearchScreen extends AppCompatActivity implements RecyclerV
         } else if (itemName.contains("rice")) {
             intent = new Intent(HomeItemSearchScreen.this, rice_listview.class);
         } else {
-            Toast.makeText(this, "No matching category found!", Toast.LENGTH_SHORT).show();
             return;
         }
 

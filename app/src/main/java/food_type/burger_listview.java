@@ -1,6 +1,7 @@
 package food_type;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -22,7 +23,9 @@ public class burger_listview extends AppCompatActivity implements RecyclerViewIn
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_burger_listview);
         RecyclerView recyclerView = findViewById(R.id.burger_recycler_view);
-         burgerItemsListDataList = new ArrayList<>();
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        burgerItemsListDataList = new ArrayList<>();
 
         burgerItemsListDataList.add(new food_items_listData(R.drawable.shrimp_burger,"49.000", "Shrimp Burger", "Shrimp Burger"));
         burgerItemsListDataList.add(new food_items_listData(R.drawable.bulgogi_burger,"49.000", "Bulgogi Burger", "Bulgogi Burger"));

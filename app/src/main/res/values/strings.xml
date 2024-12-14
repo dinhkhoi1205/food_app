@@ -56,7 +56,15 @@
     <string name="enter_your_current_location_text_view">Enter your current location</string>
     <string name="yes_dialog_button">Yes</string>
     <string name="no_dialog_button">No</string>
+    <!--Search view -->
+    <string name="no_food_found_text_view">No Food Found</string>
 
+    <!--Custom log out dialog -->
+    <string name="my_profile_text_view">My profile</string>
+    <string name="are_you_sure_you_want_to_log_out_text_view">Are you sure you want to log out ?</string>
+    <string name="forgot_password_text_view">FORGOT PASSWORD</string>
 
-
+    <!--Forgot password view -->
+    <string name="email_provide_text_view">Provide your email\'s account for which you want to reset password</string>
+    <string name="email_hint_provide">Email</string>
 </resources>

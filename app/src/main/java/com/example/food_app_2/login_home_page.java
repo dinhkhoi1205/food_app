@@ -2,6 +2,7 @@ package com.example.food_app_2;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.food_app_2.databinding.ActivityLoginHomePageBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,6 +44,8 @@ public class login_home_page extends AppCompatActivity {
 
     TextInputEditText textInput_password;
 
+    TextView forgotPassword;
+
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -49,10 +53,12 @@ public class login_home_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login_home_page);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         editText_userName_fill = findViewById(R.id.username_edittext);
         textInput_password = findViewById(R.id.password_input);
         textView_signUp = findViewById(R.id.sign_up_label);
         button_signIn = findViewById(R.id.sign_in_button);
+        forgotPassword = findViewById(R.id.forgot_password_label);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -67,6 +73,15 @@ public class login_home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(login_home_page.this, registration_screen.class);
+                startActivity(intent);
+            }
+        });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                intent = new Intent(login_home_page.this, forgot_password.class);
                 startActivity(intent);
             }
         });

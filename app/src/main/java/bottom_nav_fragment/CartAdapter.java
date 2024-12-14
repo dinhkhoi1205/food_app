@@ -2,18 +2,15 @@ package bottom_nav_fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.food_app_2.Order;
+import model.Order;
 import com.example.food_app_2.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import assest.CartDBHelper;

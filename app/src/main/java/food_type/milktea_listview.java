@@ -1,6 +1,7 @@
 package food_type;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -21,6 +22,8 @@ public class milktea_listview extends AppCompatActivity implements RecyclerViewI
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_milktea_listview);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         RecyclerView recyclerView = findViewById(R.id.milktea_recycler_view);
         milkTeaItemsListDataList = new ArrayList<>();
 

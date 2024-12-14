@@ -1,6 +1,7 @@
 package restaurant;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -23,7 +24,7 @@ public class popeyes_restaurant_list_view extends AppCompatActivity implements R
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_popeyes_restaurant_list_view);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         RecyclerView recyclerView = findViewById(R.id.pop_recycler_view);
         popeyesListData = new ArrayList<>();
         popeyesListData.add(new restaurant_items_listData(R.drawable.popeyes_item_1, "64.000", "Combo Snack Wings",

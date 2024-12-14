@@ -65,17 +65,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/password_label"
         android:layout_margin="10dp"
-        app:passwordToggleEnabled="true"
-        android:padding="10dp"
         android:textColorHint="@color/light_gray"
-        >
+        app:boxStrokeColor="@color/black"
+        app:passwordToggleEnabled="true">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="@string/enter_password_hint"
-            android:background="@drawable/dark_line_rounded"
             android:ems="15"
+            android:hint="@string/enter_password_hint"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 

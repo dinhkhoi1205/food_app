@@ -1,6 +1,7 @@
 package restaurant;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -22,6 +23,7 @@ public class star_buck_list_view extends AppCompatActivity implements RecyclerVi
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_star_buck_list_view);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         RecyclerView recyclerView = findViewById(R.id.star_bucks_recycler_view);
         starBucksItemsListData = new ArrayList<>();
         starBucksItemsListData.add(new restaurant_items_listData(R.drawable.star_buck_item_1,"163.000","Caffè Mocha",

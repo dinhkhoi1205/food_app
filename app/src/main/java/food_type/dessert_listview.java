@@ -1,6 +1,7 @@
 package food_type;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -25,6 +26,7 @@ public class dessert_listview extends AppCompatActivity implements RecyclerViewI
         setContentView(R.layout.activity_dessert_listview);
         RecyclerView recyclerView = findViewById(R.id.dessert_recycler_view);
         dessertItemsListDataList = new ArrayList<>();
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         dessertItemsListDataList.add(new food_items_listData(R.drawable.tiramisu_cake,"420.000", "Tiramisu cake", " "));
         dessertItemsListDataList.add(new food_items_listData(R.drawable.jelly_cake,"360.000", "Jelly cake", " "));

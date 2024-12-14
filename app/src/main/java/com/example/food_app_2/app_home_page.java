@@ -2,6 +2,7 @@ package com.example.food_app_2;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -33,6 +34,7 @@ public class app_home_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         binding = ActivityAppHomePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new home_screen());
