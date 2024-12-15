@@ -110,7 +110,7 @@ public class registration_screen extends AppCompatActivity {
                     firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                         if (task.isSuccessful()){
                             String userId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
-                            User user = new User(username,password,email,phone);
+                            User user = new User(username,email,phone);
 
                             reference.child(userId).setValue(user).addOnCompleteListener(dbTask ->{
                                 if(dbTask.isSuccessful()){
