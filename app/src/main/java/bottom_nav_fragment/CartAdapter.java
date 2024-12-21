@@ -13,7 +13,7 @@ import com.example.food_app_2.R;
 
 import java.util.List;
 
-import assest.CartDBHelper;
+import asset.CartDBHelper;
 
 public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
     List<Order> orderListData;

@@ -1,8 +1,6 @@
 package restaurant;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,22 +11,13 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.food_app_2.R;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.Objects;
 
-import assest.CartDBHelper;
-import food_type.burger_listview;
-import food_type.dessert_listview;
-import food_type.food_type_detail;
-import food_type.milktea_listview;
-import food_type.pizza_listview;
-import food_type.rice_listview;
+import asset.CartDBHelper;
 
 public class restaurant_detail extends AppCompatActivity {
     ImageView resFoodImage;

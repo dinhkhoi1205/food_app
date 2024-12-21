@@ -1,13 +1,21 @@
 package bottom_nav_fragment;
 
+import static android.content.Intent.getIntent;
+
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 import java.util.Objects;
 
+import asset.Map;
 import food_type.burger_listview;
 import food_type.dessert_listview;
 import food_type.milktea_listview;
@@ -42,18 +51,44 @@ public class home_screen extends Fragment {
     DatabaseReference reference;
     FirebaseAuth auth;
 
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_screen, container, false);
+
         FrameLayout pizza_frame_type = view.findViewById(R.id.food_frame_1);
         FrameLayout burger_frame_type = view.findViewById(R.id.food_frame_2);
         FrameLayout milkTea_frame_type = view.findViewById(R.id.food_frame_3);
         FrameLayout rice_frame_type = view.findViewById(R.id.food_frame_4);
         FrameLayout dessert_frame_type = view.findViewById(R.id.food_frame_5);
         TextView userName_textView = view.findViewById(R.id.username_text_view_home_screen);
+        TextView address_textView = view.findViewById(R.id.address_text_view_home_screen);
+        TextView deliver_to_textView = view.findViewById(R.id.deliver_to_text_view);
+
+
+        ActivityResultLauncher<Intent> mapActivityResultLauncher =
+                registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null) {
+                            String address = data.getStringExtra("short_address");
+                            address_textView.setText(address);
+                        }
+                    }
+                });
+
+        deliver_to_textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Map.class);
+                mapActivityResultLauncher.launch(intent);
+            }
+        });
         auth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference("User");
 
@@ -155,6 +190,7 @@ public class home_screen extends Fragment {
 
         return view;
     }
+
 
 
 }

@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import assest.CartDBHelper;
+import asset.CartDBHelper;
 
 public class cart_screen extends Fragment implements CartAdapter.OnQuantityChangedListener {
     RecyclerView cartRecyclerView;

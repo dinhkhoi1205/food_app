@@ -14,7 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,21 +38,43 @@
                     android:paddingEnd="10dp"
                     android:textSize="20sp"/>
             </LinearLayout>
-            <TextView
-                android:id="@+id/order_label"
-                android:layout_width="350dp"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/what_would_you_like_to_order_text_view_home_page"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                android:layout_margin="25dp"
-                />
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/deliver_form"
+                >
+                <TextView
+                    android:id="@+id/deliver_to_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DELIVER TO"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_margin="25dp"
+                    tools:ignore="HardcodedText" />
+                <TextView
+                    android:id="@+id/address_text_view_home_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
 
             <SearchView
                 android:id="@+id/search_bar"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/order_label"
+                android:layout_below="@+id/deliver_form"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/dark_line_rounded"
                 android:queryHint="Search for food"
@@ -98,7 +119,8 @@
                             android:layout_marginTop="50dp"
                             android:text="Pizza"
                             android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </FrameLayout>
 
                     <!-- Food container 2 -->
@@ -430,7 +452,8 @@
                                     android:textColor="@color/black"
                                     android:textStyle="bold"
                                     android:text="10 mins"
-                                    app:drawableLeftCompat="@drawable/baseline_access_time_filled_24" />
+                                    app:drawableLeftCompat="@drawable/baseline_access_time_filled_24"
+                                    tools:ignore="HardcodedText" />
                             </LinearLayout>
 
                             <!-- Rate view -->
@@ -443,7 +466,8 @@
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
                                 android:textSize="14sp"
-                                app:drawableLeftCompat="@drawable/baseline_star_24" />
+                                app:drawableLeftCompat="@drawable/baseline_star_24"
+                                tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
