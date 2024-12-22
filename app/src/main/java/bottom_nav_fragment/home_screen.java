@@ -1,10 +1,13 @@
 package bottom_nav_fragment;
 
+import static android.content.Context.MODE_PRIVATE;
 import static android.content.Intent.getIntent;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -20,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -69,6 +73,12 @@ public class home_screen extends Fragment {
         TextView userName_textView = view.findViewById(R.id.username_text_view_home_screen);
         TextView address_textView = view.findViewById(R.id.address_text_view_home_screen);
         TextView deliver_to_textView = view.findViewById(R.id.deliver_to_text_view);
+        ImageView profileImage = view.findViewById(R.id.profile_image_home_screen);
+
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("locationPrefs", MODE_PRIVATE);
+        String addressSave = sharedPreferences.getString("selectAddress","No location selected");
+
+        address_textView.setText(addressSave);
 
 
         ActivityResultLauncher<Intent> mapActivityResultLauncher =

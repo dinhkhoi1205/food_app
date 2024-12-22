@@ -20,10 +20,37 @@
             android:layout_marginTop="30dp"
             />
 
+        <FrameLayout
+            android:id="@+id/choose_image_frame_layout_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:id="@+id/image_view_profile"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/baseline_person_24"
+                android:backgroundTint="@color/blue"
+                android:scaleType="centerCrop"
+                android:background="@drawable/white_circle"
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_camera_alt_24"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/white_circle"
+                android:backgroundTint="@color/white"
+                android:padding="8dp"
+                android:layout_margin="4dp"/>
+        </FrameLayout>
+
+
         <EditText
             android:id="@+id/username_edittext_profile"
             android:background="@drawable/dark_line_rounded"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             tools:text="Khoi"
             android:layout_width="match_parent"
             android:layout_height="50dp"
