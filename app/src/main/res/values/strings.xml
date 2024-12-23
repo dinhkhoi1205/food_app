@@ -53,7 +53,7 @@
     <string name="phone_number_hint">Phone number</string>
 
     <!--Custom enter address dialog -->
-    <string name="enter_your_current_location_text_view">Enter your current location</string>
+    <string name="enter_your_current_location_text_view">Are you sure with your current location</string>
     <string name="yes_dialog_button">Yes</string>
     <string name="no_dialog_button">No</string>
     <!--Search view -->

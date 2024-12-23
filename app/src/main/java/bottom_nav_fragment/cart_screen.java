@@ -1,7 +1,11 @@
 package bottom_nav_fragment;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -17,6 +21,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import asset.Map;
 import model.Order;
 import com.example.food_app_2.R;
 import model.Request;
@@ -40,6 +45,8 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
     CartAdapter cartAdapter;
     CartDBHelper cartDBHelper;
     MaterialButton placeOrderButton;
+
+    TextView chooseLocation;
 
     MaterialButton clearOrderButton;
 
@@ -98,7 +105,12 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
                 }
                 btnDialogNo = dialog.findViewById(R.id.no_dialog_button);
                 btnDialogYes = dialog.findViewById(R.id.yes_dialog_button);
+                EditText enterAddress = dialog.findViewById(R.id.location_text_view);
+                SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("locationPrefs", MODE_PRIVATE);
+                String addressSave = sharedPreferences.getString("addressCart","No location selected");
+                enterAddress.setText(addressSave);
                 dialog.show();
+
 
                 @SuppressLint("DefaultLocale") String total = String.format("%.3f",totalPrice(orderList));
 
@@ -113,9 +125,8 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
                     @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onClick(View v) {
-                        EditText enterAddress = dialog.findViewById(R.id.location_edit_text_fill);
-                        String address = enterAddress.getText().toString();
-                        if(address.isEmpty()){
+                        String addressToSave = enterAddress.getText().toString();
+                        if(addressToSave.isEmpty()){
                             Toast.makeText(getActivity(), "Please enter address", Toast.LENGTH_SHORT).show();
                             return;
                         }
@@ -132,7 +143,7 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     String phone = snapshot.child("phone").getValue(String.class);
                                     String name = snapshot.child("userName").getValue(String.class);
-                                    Request request = new Request(phone, name, address, total, orderList);
+                                    Request request = new Request(phone, name, addressToSave, total, orderList);
 
                                     requestReference.push().setValue(request).addOnCompleteListener(uploadTask ->{
                                         if(uploadTask.isSuccessful()) {

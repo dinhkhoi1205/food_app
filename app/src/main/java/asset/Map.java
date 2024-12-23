@@ -214,6 +214,7 @@ GoogleMap.OnMarkerDragListener{
         SharedPreferences sharedPreferences = getSharedPreferences("locationPrefs",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("selectAddress", shortAddress);
+        editor.putString("addressCart",shortAddress);
         editor.apply();
         Intent intent = new Intent();
         intent.putExtra("short_address", shortAddress);
