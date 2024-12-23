@@ -115,6 +115,7 @@ public class login_home_page extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(login_home_page.this, "Login fail", Toast.LENGTH_SHORT).show();
+                return;
             }
         });
     }
