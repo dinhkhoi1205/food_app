@@ -39,59 +39,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Objects;
 
 public class person_screen extends Fragment {
     DatabaseReference reference;
     FirebaseAuth auth;
-//    SharedPreferences sharedPreferences;
 
     ImageView imageViewProfile;
-//    Uri selectedImage;
 
     Dialog dialog;
 
-//    private final ActivityResultLauncher<PickVisualMediaRequest> resultLauncher = registerForActivityResult(new ActivityResultContracts.PickVisualMedia(), uri->{
-//        if (uri != null) {
-//
-//            try {
-//                InputStream inputStream = requireActivity().getContentResolver().openInputStream(uri);
-//                if (inputStream == null) {
-//                    Toast.makeText(getActivity(), "Error: Unable to access image", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                File imageFile = new File(requireActivity().getFilesDir(),"profile_image.jpg");
-//                OutputStream outputStream = new FileOutputStream(imageFile);
-//
-//                byte[] buffer = new byte[1024];
-//                int byteRead;
-//                while ((byteRead = inputStream.read(buffer)) != -1){
-//                    outputStream.write(buffer, 0, byteRead
-//                    );
-//                }
-//
-//                inputStream.close();
-//                outputStream.close();
-//
-//                String filePath = imageFile.getAbsolutePath();
-//                SharedPreferences.Editor editor = sharedPreferences.edit();
-//                editor.putString("profileImagePath",filePath);
-//                editor.apply();
-//
-//                Glide.with(this).load(imageFile).into(imageViewProfile); // Display the selected image
-//                Toast.makeText(getActivity(), "Image selected successfully", Toast.LENGTH_SHORT).show();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                Toast.makeText(getActivity(), "Failed  saving image", Toast.LENGTH_SHORT).show();
-//            }
-//        } else {
-//            Toast.makeText(getActivity(), "No image selected", Toast.LENGTH_SHORT).show();
-//        }
-//    });
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -111,13 +68,10 @@ public class person_screen extends Fragment {
         EditText email = view.findViewById(R.id.email_edittext_profile);
         MaterialButton save_btn = view.findViewById(R.id.save_button_profile);
         MaterialButton log_out_btn = view.findViewById(R.id.log_out_button_profile);
-        FrameLayout chooseImage = view.findViewById(R.id.choose_image_frame_layout_profile);
-        imageViewProfile = view.findViewById(R.id.image_view_profile);
 
         auth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference("User");
 
-//        sharedPreferences = requireActivity().getSharedPreferences("UserPrefs", Activity.MODE_PRIVATE);
 
         String userId = Objects.requireNonNull(auth.getCurrentUser()).getUid();
 
@@ -147,7 +101,7 @@ public class person_screen extends Fragment {
             }
         });
 
-//        loadImage();
+
         // Save button
         save_btn.setOnClickListener(v -> {
             String newUsername = username.getText().toString();
@@ -162,10 +116,6 @@ public class person_screen extends Fragment {
                 reference.child(userId).child("userName").setValue(newUsername);
                 reference.child(userId).child("phone").setValue(newPhone);
                 reference.child(userId).child("email").setValue(newEmail);
-
-//                if(selectedImage != null){
-//                    saveImgToPreference(selectedImage);
-//                }
                 Toast.makeText(getActivity(), "Updated profile", Toast.LENGTH_SHORT).show();
             }
         });
@@ -193,26 +143,8 @@ public class person_screen extends Fragment {
         });
 
 
-//        chooseImage.setOnClickListener(v -> resultLauncher.launch(new PickVisualMediaRequest.Builder().build()));
         return view;
     }
 
 
-//    private void saveImgToPreference(Uri imageUri){
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.putString("profileImage", imageUri.toString());
-//        editor.apply();
-//    }
-
-//    private void loadImage() {
-//        String imageUri = sharedPreferences.getString("profileImagePath", null);
-//        if (imageUri != null) {
-//            File imageFile = new File(imageUri);
-//            if (imageFile.exists()) {
-//                Glide.with(this).load(imageUri).into(imageViewProfile);
-//            } else {
-//                Toast.makeText(getActivity(), "Image not found", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
 }

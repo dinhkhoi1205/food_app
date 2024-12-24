@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Orders"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- RecyclerView for Order Items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_orders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        tools:listitem="@layout/order_view_history"/>
+
+    <!-- Clear Order Button -->
+    <Button
+        android:id="@+id/clear_order_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Orders"
+        android:textSize="18sp"
+        android:backgroundTint="@color/red"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.example.food_app_2.R;
 import com.example.food_app_2.app_home_page;
+import com.example.food_app_2.food_order_view;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -73,10 +74,18 @@ public class home_screen extends Fragment {
         TextView userName_textView = view.findViewById(R.id.username_text_view_home_screen);
         TextView address_textView = view.findViewById(R.id.address_text_view_home_screen);
         TextView deliver_to_textView = view.findViewById(R.id.deliver_to_text_view);
-        ImageView profileImage = view.findViewById(R.id.profile_image_home_screen);
+        ImageView foodOrderButton = view.findViewById(R.id.food_order_view_button);
 
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("locationPrefs", MODE_PRIVATE);
         String addressSave = sharedPreferences.getString("selectAddress","No location selected");
+
+        foodOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), food_order_view.class);
+                startActivity(intent);
+            }
+        });
 
         address_textView.setText(addressSave);
 

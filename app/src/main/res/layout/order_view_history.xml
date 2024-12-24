@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/rounded_rectangle"
+    tools:context=".food_order_view">
+
+        <TextView
+            android:id="@+id/title_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Seafood Pizza"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/place_order_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Placed"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/quantity_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3 items"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/price_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/green"
+            tools:text="140.000 VND"/>
+    </LinearLayout>

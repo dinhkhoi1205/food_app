@@ -120,15 +120,17 @@ public class registration_screen extends AppCompatActivity {
                                     finish();
                                 }
                             });
-
+                        } else{
+                            String errorMessage = Objects.requireNonNull(task.getException()).getMessage();
+                            assert errorMessage != null;
+                            if (errorMessage.contains("The email address is already in use by another account")) {
+                                Toast.makeText(registration_screen.this, "This email is already registered. Please use a different email.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(registration_screen.this, "Registration failed: " + errorMessage, Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
-
-
-
             }
         });
-
-
     }
 }

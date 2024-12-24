@@ -107,15 +107,13 @@ public class login_home_page extends AppCompatActivity {
         firebaseAuth.signInWithEmailAndPassword(userEmail,userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Toast.makeText(login_home_page.this, "Login successful", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(login_home_page.this, app_home_page.class));
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(login_home_page.this, "Login fail", Toast.LENGTH_SHORT).show();
-                return;
+                if (task.isSuccessful()) {
+                    Toast.makeText(login_home_page.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(login_home_page.this, app_home_page.class));
+                    finish();
+                } else {
+                    Toast.makeText(login_home_page.this, "Login fail", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
