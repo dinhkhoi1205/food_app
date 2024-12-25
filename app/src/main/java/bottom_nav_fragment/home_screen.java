@@ -131,7 +131,7 @@ public class home_screen extends Fragment {
             }
         });
 
-        SearchView searchView = view.findViewById(R.id.search_bar);
+        TextView searchView = view.findViewById(R.id.search_bar);
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

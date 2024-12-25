@@ -26,12 +26,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.food_app_2.R;
 import com.example.food_app_2.login_home_page;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,8 +47,6 @@ import java.util.Objects;
 public class person_screen extends Fragment {
     DatabaseReference reference;
     FirebaseAuth auth;
-
-    ImageView imageViewProfile;
 
     Dialog dialog;
 
@@ -65,9 +66,10 @@ public class person_screen extends Fragment {
         View view  = inflater.inflate(R.layout.fragment_person_screen, container, false);
         EditText username = view.findViewById(R.id.username_edittext_profile);
         EditText phone = view.findViewById(R.id.phone_number_edittext_profile);
-        EditText email = view.findViewById(R.id.email_edittext_profile);
+        TextView email = view.findViewById(R.id.email_edittext_profile);
         MaterialButton save_btn = view.findViewById(R.id.save_button_profile);
         MaterialButton log_out_btn = view.findViewById(R.id.log_out_button_profile);
+        MaterialButton changePassword = view.findViewById(R.id.change_password_profile);
 
         auth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference("User");
@@ -108,20 +110,42 @@ public class person_screen extends Fragment {
             String newPhone = phone.getText().toString();
             String newEmail = email.getText().toString();
 
-            // Save updated data to Firebase
             if(newUsername.isEmpty() || newPhone.isEmpty() || newEmail.isEmpty()){
                 Toast.makeText(getActivity(), "Can not leave the filed empty", Toast.LENGTH_SHORT).show();
             }
-            else {
-                reference.child(userId).child("userName").setValue(newUsername);
-                reference.child(userId).child("phone").setValue(newPhone);
-                reference.child(userId).child("email").setValue(newEmail);
-                Toast.makeText(getActivity(), "Updated profile", Toast.LENGTH_SHORT).show();
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(newEmail).matches()) {
+                Toast.makeText(getActivity(), "Invalid email format", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            reference.child(userId).child("userName").setValue(newUsername);
+            reference.child(userId).child("phone").setValue(newPhone);
+
         });
 
 
+        //Change password
+        changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String currentEmail = auth.getCurrentUser().getEmail();
 
+                if (currentEmail == null || currentEmail.isEmpty()) {
+                    Toast.makeText(getActivity(), "Unable to change email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Send a password reset email
+                auth.sendPasswordResetEmail(currentEmail).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getActivity(), "Password reset email sent to " + currentEmail, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Failed to send reset email: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
         //Log out button
         log_out_btn.setOnClickListener(new View.OnClickListener() {
             @Override

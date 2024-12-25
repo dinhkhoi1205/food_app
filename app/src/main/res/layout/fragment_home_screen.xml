@@ -81,16 +81,18 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <SearchView
+            <TextView
                 android:id="@+id/search_bar"
                 android:layout_width="350dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_below="@+id/deliver_form"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/dark_line_rounded"
-                android:queryHint="Search for food"
-                android:iconifiedByDefault="false"
-                />
+                android:hint="Search for food"
+                app:drawableLeftCompat="@drawable/baseline_search_24"
+                android:padding="10dp"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
 
             <!--Food type choice -->
             <HorizontalScrollView
