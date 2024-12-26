@@ -75,11 +75,11 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
     private List<Order> orderList;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Create dialog
-        dialog = new Dialog(getActivity());
+        dialog = new Dialog(requireActivity());
         dialog.setContentView(R.layout.custom_dialog_enter_address);
         Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(false);
@@ -194,13 +194,17 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
     private List<Order> loadCartItems() {
         List<Order> itemList = new ArrayList<>();
         Cursor cursor = cartDBHelper.getCartData();
+        //Get image from share preference
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("CartPrefs", MODE_PRIVATE);
+
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("ID"));
                 String name = cursor.getString(cursor.getColumnIndexOrThrow("ItemName"));
                 double price = cursor.getDouble(cursor.getColumnIndexOrThrow("ItemPrice"));
                 int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("ItemQuantity"));
-                itemList.add(new Order(id, name, price, quantity));
+                int image = sharedPreferences.getInt("foodImageCart", 0);
+                itemList.add(new Order(id, name, price, quantity,image));
             } while (cursor.moveToNext());
         }
 

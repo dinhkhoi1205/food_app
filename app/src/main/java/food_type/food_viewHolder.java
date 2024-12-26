@@ -15,14 +15,12 @@ public class food_viewHolder extends RecyclerView.ViewHolder{
     ImageView imageView;
     TextView nameView, descriptionView, priceView;
 
-    MaterialButton addButton;
     public food_viewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
         super(itemView);
         imageView = itemView.findViewById(R.id.food_image);
         nameView = itemView.findViewById(R.id.food_name);
         descriptionView = itemView.findViewById(R.id.food_description);
         priceView = itemView.findViewById(R.id.food_price);
-        addButton = itemView.findViewById(R.id.food_add_button);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

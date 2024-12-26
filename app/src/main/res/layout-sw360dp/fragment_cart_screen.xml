@@ -1,0 +1,91 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="bottom_nav_fragment.cart_screen">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+        <!--My cart text view-->
+       <TextView
+           android:id="@+id/my_cart_text_view"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/my_cart_cartListView_Cart"
+           android:gravity="center"
+           android:textColor="@color/green"
+           android:textStyle="bold"
+           android:textSize="26sp"
+           android:layout_marginTop="20dp"/>
+
+        <!--Recyclerview-->
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/cart_detail_order_recyclerview"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_above="@id/total_price_textview"
+           android:layout_below="@id/my_cart_text_view"
+           android:layout_marginTop="20dp"
+           android:layout_marginStart="8dp"
+           android:layout_marginEnd="8dp"
+           tools:listitem="@layout/cart_list_view"
+           />
+
+       <!-- Total Price TextView -->
+       <TextView
+           android:id="@+id/total_price_textview"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           tools:text="Total: "
+           android:gravity="center"
+           android:textColor="@color/black"
+           android:textSize="18sp"
+           android:layout_above="@id/button_container_cart" />
+
+       <LinearLayout
+           android:id="@+id/button_container_cart"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_alignParentBottom="true"
+           android:layout_margin="8dp"
+           android:weightSum="2">
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/place_order_button"
+               android:layout_width="0dp"
+               android:layout_height="70dp"
+               android:layout_weight="1"
+               android:backgroundTint="@color/green"
+               android:gravity="center"
+               android:text="@string/place_your_order"
+               android:textColor="@color/white"
+               android:padding="12dp"
+               android:layout_marginEnd="5dp"
+               android:textSize="18sp"
+               android:maxLines="1"
+               android:ellipsize="none"/>
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/clear_order_button"
+               android:layout_width="0dp"
+               android:layout_height="70dp"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:textSize="18sp"
+               android:ellipsize="none"
+               android:maxLines="1"
+               android:layout_marginStart="5dp"
+               android:text="@string/clear_order_button"
+               android:backgroundTint="@color/green"
+               android:textColor="@color/white"
+               />
+       </LinearLayout>
+
+
+   </RelativeLayout>
+
+</FrameLayout>

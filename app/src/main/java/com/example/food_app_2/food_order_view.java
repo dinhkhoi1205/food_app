@@ -1,6 +1,7 @@
 package com.example.food_app_2;
 
 import android.annotation.SuppressLint;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,7 +47,7 @@ public class food_order_view extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_orders);
         clearOrderButton = findViewById(R.id.clear_order_button);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         orderHistories = new ArrayList<>();
         foodOrderAdapter = new food_order_Adapter(orderHistories,this);

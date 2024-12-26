@@ -1,6 +1,8 @@
 package food_type;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -42,7 +44,7 @@ public class food_type_detail extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_food_type_detail);
         cartDBHelper = new CartDBHelper(this);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         foodImage = findViewById(R.id.food_image_detail);
         foodName = findViewById(R.id.food_detail_name);
         foodPrice = findViewById(R.id.food_detail_price);
@@ -50,7 +52,6 @@ public class food_type_detail extends AppCompatActivity {
         returnButton = findViewById(R.id.return_button);
         textQuantity = findViewById(R.id.text_quantity);
         addItemButton = findViewById(R.id.add_item_button);
-
 
         Intent intent = getIntent();
         String nameDetail = intent.getStringExtra("food_name");
@@ -112,6 +113,12 @@ public class food_type_detail extends AppCompatActivity {
                         Toast.makeText(this, "You already have this item in cart", Toast.LENGTH_SHORT).show();
                     }
                     else {
+                        // Save data to SharedPreferences
+                        SharedPreferences sharedPreferences = getSharedPreferences("CartPrefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("foodImageCart", imageDetail);
+                        editor.apply();
+                        //Save data in sql
                         boolean checkInsertCartData = cartDBHelper.cartInsert(nameDetail, basePrice, count);
                         if (checkInsertCartData) {
                             Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();

@@ -4,15 +4,15 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
+    android:padding="6dp"
     android:background="@color/white"
     android:gravity="center_vertical">
 
     <!-- Food Image -->
     <ImageView
         android:id="@+id/food_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:scaleType="centerCrop"
         android:cropToPadding="true"
@@ -52,7 +52,7 @@
             android:id="@+id/food_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textColor="@color/black"
             android:textStyle="bold"
             tools:text="$45.00" />

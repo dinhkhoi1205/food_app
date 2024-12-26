@@ -1,6 +1,7 @@
 package com.example.food_app_2;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -46,7 +47,7 @@ public class forgot_password extends AppCompatActivity {
         btnReset = findViewById(R.id.reset_password_button);
         edtEmail = findViewById(R.id.email_fill_rest_password);
         progressBar = findViewById(R.id.forget_password_progressbar);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         auth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference("User");
 
