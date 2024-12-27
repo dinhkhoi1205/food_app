@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:layout_marginTop="30dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="bottom_nav_fragment.home_screen">
+    tools:context="bottom_nav_fragment.home_screen"
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -101,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/search_bar"
                 android:layout_marginTop="20dp"
-                android:background="@color/light_gray"
+                android:background="@color/white"
                 >
 
                 <LinearLayout
@@ -123,6 +124,10 @@
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
                             android:src="@drawable/pizza"
+                            android:padding="4dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
+                            android:cropToPadding="false"
                             app:shapeAppearanceOverlay="@style/roundImageView" />
 
                         <TextView
@@ -131,7 +136,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="50dp"
                             android:text="Pizza"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textStyle="bold"
                             tools:ignore="HardcodedText" />
                     </FrameLayout>
@@ -149,6 +154,10 @@
                             android:layout_height="80dp"
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
+                            android:padding="4dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
+                            android:cropToPadding="false"
                             android:src="@drawable/burger"
                             app:shapeAppearanceOverlay="@style/roundImageView" />
 
@@ -158,8 +167,9 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="50dp"
                             android:text="Burger"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </FrameLayout>
 
                     <!--Food container 3 -->
@@ -175,6 +185,10 @@
                             android:layout_height="80sp"
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
+                            android:padding="4dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
+                            android:cropToPadding="false"
                             android:src="@drawable/milk_tea"
                             app:shapeAppearanceOverlay="@style/roundImageView" />
 
@@ -184,8 +198,9 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="50dp"
                             android:text="Milk tea"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </FrameLayout>
 
 
@@ -202,6 +217,9 @@
                             android:layout_height="80sp"
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
+                            android:padding="4dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
                             android:src="@drawable/rice"
                             app:shapeAppearanceOverlay="@style/roundImageView" />
 
@@ -211,8 +229,9 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="50dp"
                             android:text="Rice"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </FrameLayout>
 
 
@@ -229,6 +248,10 @@
                             android:layout_height="80sp"
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
+                            android:padding="4dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
+                            android:cropToPadding="false"
                             android:src="@drawable/dessert"
                             app:shapeAppearanceOverlay="@style/roundImageView" />
 
@@ -238,8 +261,9 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="50dp"
                             android:text="Dessert"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
                     </FrameLayout>
                 </LinearLayout>
             </HorizontalScrollView>

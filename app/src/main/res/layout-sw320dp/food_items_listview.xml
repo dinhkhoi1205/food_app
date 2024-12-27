@@ -1,61 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp"
+    android:layout_height="150dp"
+    android:padding="10dp"
     android:background="@color/white"
-    android:gravity="center_vertical">
-
-    <!-- Food Image -->
-    <ImageView
-        android:id="@+id/food_image"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginEnd="6dp"
-        android:scaleType="centerCrop"
-        android:cropToPadding="true"
-        android:padding="1dp"
-        android:background="@drawable/full_line_square"
-        tools:src="@drawable/sausage_pizza" />
-
-    <!-- Food Info Container -->
+    android:layout_marginBottom="8dp"
+    >
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginStart="6dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <!-- Food Image -->
+        <ImageView
+            android:id="@+id/food_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="12dp"
+            android:scaleType="centerCrop"
+            android:cropToPadding="true"
+            android:padding="1dp"
+            android:background="@drawable/full_line_square"
+            tools:src="@drawable/sausage_pizza" />
 
-        <!-- Food Name -->
-        <TextView
-            android:id="@+id/food_name"
-            android:layout_width="wrap_content"
+        <!-- Food Info Container -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            tools:text="Sausage Pizza" />
+            android:layout_weight="1"
+            android:layout_marginStart="12dp">
 
-        <!-- Food Description -->
-        <TextView
-            android:id="@+id/food_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:textColor="@color/light_gray"
-            tools:text="Pizza + Tomato Sauce + Mozzarella Cheese" />
+            <!-- Food Name -->
+            <TextView
+                android:id="@+id/food_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="Sausage Pizza" />
 
-        <!-- Price -->
-        <TextView
-            android:id="@+id/food_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            tools:text="$45.00" />
+            <!-- Food Description -->
+            <TextView
+                android:id="@+id/food_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="@color/light_gray"
+                tools:text="Pizza + Tomato Sauce + Mozzarella Cheese and some kind" />
+
+            <!-- Price -->
+            <TextView
+                android:id="@+id/food_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="$45.00" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_to_detail_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            app:icon="@drawable/baseline_add_24"
+            android:padding="2dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/green"
+            />
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>

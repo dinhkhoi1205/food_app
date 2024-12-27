@@ -2,6 +2,7 @@ package food_type;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -39,7 +40,9 @@ public class food_Adapter extends RecyclerView.Adapter<food_viewHolder>{
         holder.descriptionView.setText(currentItem.getDescription());
         holder.priceView.setText(currentItem.getPrice());
         holder.imageView.setImageResource(currentItem.getImageResource());
-
+        holder.addButton.setOnClickListener(v -> {
+            navigateToFoodDetail(currentItem);
+        });
     }
 
     @Override
@@ -47,5 +50,13 @@ public class food_Adapter extends RecyclerView.Adapter<food_viewHolder>{
         return foodItemsListData.size();
     }
 
+    private void navigateToFoodDetail(food_items_listData item) {
+        Intent intent = new Intent(context, food_type_detail.class);
+        intent.putExtra("food_name", item.getName());
+        intent.putExtra("food_price", item.getPrice());
+        intent.putExtra("food_description", item.getDescription());
+        intent.putExtra("food_image", item.getImageResource());
+        context.startActivity(intent);
+    }
 }
 
