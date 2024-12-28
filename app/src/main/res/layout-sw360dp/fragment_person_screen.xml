@@ -52,14 +52,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:id="@+id/change_image_profile">
+            android:id="@+id/change_image_profile"
+            android:background="@drawable/rounded_image"
+            >
             <ImageView
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:id="@+id/image_profile"
                 android:src="@drawable/baseline_person_24"
-                android:background="@drawable/rounded_image"
-                android:cropToPadding="true"
                 android:scaleType="centerCrop"
                 />
             <ImageView
