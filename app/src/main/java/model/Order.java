@@ -6,15 +6,12 @@ public class Order {
     private double priceCart;
     private int quantityCart;
 
-    private int imageCart;
 
-
-    public Order(int idCart, String nameCart, double priceCart, int quantityCart, int imageCart) {
+    public Order(int idCart, String nameCart, double priceCart, int quantityCart) {
         this.idCart = idCart;
         this.nameCart = nameCart;
         this.priceCart = priceCart;
         this.quantityCart = quantityCart;
-        this.imageCart = imageCart;
     }
 
     public int getIdCart() {
@@ -49,13 +46,6 @@ public class Order {
         this.quantityCart = quantityCart;
     }
 
-    public int getImageCart() {
-        return imageCart;
-    }
-
-    public void setImageCart(int imageCart) {
-        this.imageCart = imageCart;
-    }
 
 
 }

@@ -113,11 +113,6 @@ public class food_type_detail extends AppCompatActivity {
                         Toast.makeText(this, "You already have this item in cart", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        // Save data to SharedPreferences
-                        SharedPreferences sharedPreferences = getSharedPreferences("CartPrefs", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putInt("foodImageCart", imageDetail);
-                        editor.apply();
                         //Save data in sql
                         boolean checkInsertCartData = cartDBHelper.cartInsert(nameDetail, basePrice, count);
                         if (checkInsertCartData) {

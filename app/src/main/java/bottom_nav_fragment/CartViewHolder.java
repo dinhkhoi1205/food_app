@@ -22,7 +22,6 @@ public class CartViewHolder extends RecyclerView.ViewHolder {
 
     MaterialButton decrementButton;
 
-    ImageView foodImageCart;
 
     public CartViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -32,7 +31,6 @@ public class CartViewHolder extends RecyclerView.ViewHolder {
         foodQuantityCart = itemView.findViewById(R.id.textView_quantity_cart_list_view);
         incrementButton = itemView.findViewById(R.id.button_increment_cart);
         decrementButton = itemView.findViewById(R.id.button_decrement_cart);
-        foodImageCart = itemView.findViewById(R.id.food_cart_image);
 
     }
 }

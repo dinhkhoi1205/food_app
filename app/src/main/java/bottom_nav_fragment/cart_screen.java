@@ -203,8 +203,7 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
                 String name = cursor.getString(cursor.getColumnIndexOrThrow("ItemName"));
                 double price = cursor.getDouble(cursor.getColumnIndexOrThrow("ItemPrice"));
                 int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("ItemQuantity"));
-                int image = sharedPreferences.getInt("foodImageCart", 0);
-                itemList.add(new Order(id, name, price, quantity,image));
+                itemList.add(new Order(id, name, price, quantity));
             } while (cursor.moveToNext());
         }
 

@@ -15,7 +15,7 @@
         android:layout_height="120dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        tools:src="@drawable/pepperoni_pizza"
+        android:src="@drawable/food_and_drinks"
         android:scaleType="centerCrop"
         android:background="@drawable/full_line_square"
         android:cropToPadding="true"

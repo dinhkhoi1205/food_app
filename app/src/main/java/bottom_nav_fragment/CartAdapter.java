@@ -45,7 +45,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
         holder.foodNameCart.setText(currentItem.getNameCart());
         holder.foodPriceCart.setText(String.format("%.3f",currentItem.getPriceCart()));
         holder.foodQuantityCart.setText(String.valueOf(currentItem.getQuantityCart()));
-        holder.foodImageCart.setImageResource(currentItem.getImageCart());
 
         holder.foodPriceSumOfCart.setText(String.format("%.3f",currentItem.getPriceCart() * currentItem.getQuantityCart()));
 
