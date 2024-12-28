@@ -25,8 +25,6 @@
     <!-- Log in layout -->
     <string name="username_enter_hint">Enter your email</string>
     <string name="enter_password_hint">Enter password</string>
-    <string name="sign_in_with_google_button">Sign in with Google</string>
-    <string name="sign_in_with_facebook_button">Sign in with Facebook</string>
     <string name="don_t_have_an_account_textView">Don\'t have an account?</string>
     <string name="sign_up_textView">Sign up</string>
     <string name="my_cart_cartListView_Cart">My cart</string>
@@ -44,12 +42,12 @@
 
     <!--Registration layout-->
     <string name="back_button_registrar">Back</string>
-    <string name="sign_up_text_view">Sign up</string>
+    <string name="sign_up_text_view">Sign up new account</string>
     <string name="email_hint_editText">Email</string>
     <string name="password_hint_editText">Password</string>
     <string name="confirm_password_hint_editText">Confirm password</string>
     <string name="i_agree_to_the_terms_and_condition_checkBox">I agree to the Terms and Condition</string>
-    <string name="register_button">Register</string>
+    <string name="register_button">Sign Up</string>
     <string name="phone_number_hint">Phone number</string>
 
     <!--Custom enter address dialog -->
@@ -67,4 +65,11 @@
     <!--Forgot password view -->
     <string name="email_provide_text_view">Provide your email\'s account for which you want to reset password</string>
     <string name="email_hint_provide">Email</string>
+
+
+    <!-- Profile -->
+    <string name="username_profile">Username</string>
+    <string name="phone_number_profile">Phone number</string>
+    <string name="email_profile">Email</string>
+    <string name="save_changes_profile_button">Save changes</string>
 </resources>

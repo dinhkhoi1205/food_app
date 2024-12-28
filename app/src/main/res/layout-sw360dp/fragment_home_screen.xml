@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,63 +22,64 @@
                 android:layout_alignParentEnd="true"
                 android:layout_margin="20dp"
                 android:background="@drawable/rounded_rectangle"
-                android:src="@drawable/baseline_description_24"
                 android:scaleType="centerInside"
-                />
+                android:src="@drawable/baseline_description_24" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="20dp"
-                >
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/hello_text_view_home_screen"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/username_text_view_home_screen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Khoi"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:paddingStart="5dp"
                     android:paddingEnd="10dp"
-                    android:textSize="20sp"/>
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Khoi" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/deliver_form"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:id="@+id/deliver_form"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/deliver_to_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="25dp"
                     android:text="DELIVER TO"
                     android:textSize="30sp"
                     android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_margin="25dp"
                     tools:ignore="HardcodedText" />
+
                 <TextView
                     android:id="@+id/address_text_view_home_screen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:layout_gravity="center"
                     android:padding="10dp"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
@@ -90,9 +91,9 @@
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/dark_line_rounded"
                 android:hint="Search for food"
-                app:drawableLeftCompat="@drawable/baseline_search_24"
                 android:padding="10dp"
                 android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/baseline_search_24"
                 tools:ignore="HardcodedText" />
 
             <!--Food type choice -->
@@ -102,15 +103,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/search_bar"
                 android:layout_marginTop="20dp"
-                android:background="@color/white"
-                >
+                android:background="@color/white">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
                     <!--Food container 1 -->
                     <FrameLayout
                         android:id="@+id/food_frame_1"
@@ -118,17 +117,18 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/oval_shape">
+
                         <com.google.android.material.imageview.ShapeableImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_gravity="center"
+                            android:cropToPadding="false"
+                            android:padding="4dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/pizza"
-                            android:padding="4dp"
+                            app:shapeAppearanceOverlay="@style/roundImageView"
                             app:strokeColor="@color/black"
-                            app:strokeWidth="2dp"
-                            android:cropToPadding="false"
-                            app:shapeAppearanceOverlay="@style/roundImageView" />
+                            app:strokeWidth="2dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -153,13 +153,13 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:padding="4dp"
-                            app:strokeColor="@color/black"
-                            app:strokeWidth="2dp"
                             android:cropToPadding="false"
+                            android:padding="4dp"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/burger"
-                            app:shapeAppearanceOverlay="@style/roundImageView" />
+                            app:shapeAppearanceOverlay="@style/roundImageView"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -184,13 +184,13 @@
                             android:layout_width="80sp"
                             android:layout_height="80sp"
                             android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:padding="4dp"
-                            app:strokeColor="@color/black"
-                            app:strokeWidth="2dp"
                             android:cropToPadding="false"
+                            android:padding="4dp"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/milk_tea"
-                            app:shapeAppearanceOverlay="@style/roundImageView" />
+                            app:shapeAppearanceOverlay="@style/roundImageView"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -216,12 +216,12 @@
                             android:layout_width="80sp"
                             android:layout_height="80sp"
                             android:layout_gravity="center"
-                            android:scaleType="centerCrop"
                             android:padding="4dp"
-                            app:strokeColor="@color/black"
-                            app:strokeWidth="2dp"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/rice"
-                            app:shapeAppearanceOverlay="@style/roundImageView" />
+                            app:shapeAppearanceOverlay="@style/roundImageView"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -247,13 +247,13 @@
                             android:layout_width="80sp"
                             android:layout_height="80sp"
                             android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:padding="4dp"
-                            app:strokeColor="@color/black"
-                            app:strokeWidth="2dp"
                             android:cropToPadding="false"
+                            android:padding="4dp"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/dessert"
-                            app:shapeAppearanceOverlay="@style/roundImageView" />
+                            app:shapeAppearanceOverlay="@style/roundImageView"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -276,90 +276,86 @@
                 android:layout_margin="20dp"
                 android:text="Popular resutaurants"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="30dp"
-                />
+                android:textStyle="bold" />
 
             <!--Restaurant choice -->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:layout_below="@id/popular_textview">
+                android:layout_below="@id/popular_textview"
+                android:padding="8dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
                     <!-- Restaurant 1 -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/kfc_card_view"
                         android:layout_width="290dp"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="12dp"
+                        android:layout_marginEnd="10dp"
                         android:elevation="4dp"
-                        android:layout_marginEnd="10dp">
+                        app:cardCornerRadius="12dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:background="@drawable/rounded_rectangle"
-                            >
+                            android:orientation="vertical">
 
                             <ImageView
                                 android:layout_width="300dp"
                                 android:layout_height="160dp"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/kfc"
-                                />
+                                android:src="@drawable/kfc" />
                             <!-- Title and time -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
                                 android:orientation="horizontal"
                                 android:paddingStart="16dp"
-                                android:paddingEnd="16dp"
-                                android:layout_marginTop="12dp"
-                                >
+                                android:paddingEnd="16dp">
 
                                 <TextView
                                     android:id="@+id/kfc_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginTop="12dp"
                                     android:text="@string/kfc_thong_nhat_address"
-                                    android:layout_gravity="start"
                                     android:textColor="@color/black"
                                     android:textStyle="bold" />
 
                                 <View
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"/>
+                                    android:layout_weight="1" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:drawableLeft="@drawable/baseline_access_time_filled_24"
                                     android:gravity="end"
-                                    android:textColor="@color/black"
-                                    android:textStyle="bold"
                                     android:text="16 mins"
-                                    android:drawableLeft="@drawable/baseline_access_time_filled_24"/>
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
                             </LinearLayout>
 
                             <!-- Rate view -->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
                                 android:layout_marginStart="30dp"
-                                android:text="9.6"
+                                android:layout_marginTop="2dp"
                                 android:drawableLeft="@drawable/baseline_star_24"
+                                android:text="9.6"
                                 android:textColor="@color/black"
-                                android:textStyle="bold"
                                 android:textSize="14dp"
-                                />
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -368,54 +364,52 @@
                         android:id="@+id/pop_card_view"
                         android:layout_width="290dp"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="12dp"
+                        android:layout_marginEnd="10dp"
                         android:elevation="4dp"
-                        android:layout_marginEnd="10dp">
+                        app:cardCornerRadius="12dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:background="@drawable/rounded_rectangle"
-                            >
+                            android:orientation="vertical">
 
                             <ImageView
                                 android:layout_width="300dp"
                                 android:layout_height="160dp"
-                                android:src="@drawable/popeeyes"
-                                />
+                                android:src="@drawable/popeeyes" />
                             <!-- Title and time -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
                                 android:orientation="horizontal"
                                 android:paddingStart="16dp"
-                                android:paddingEnd="16dp"
-                                android:layout_marginTop="12dp"
-                                >
+                                android:paddingEnd="16dp">
 
                                 <TextView
                                     android:id="@+id/popeyes_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginTop="12dp"
                                     android:text="@string/popeyes_le_duc_tho_address"
-                                    android:layout_gravity="start"
                                     android:textColor="@color/black"
                                     android:textStyle="bold" />
 
                                 <View
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"/>
+                                    android:layout_weight="1" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="end"
+                                    android:text="10 mins"
                                     android:textColor="@color/black"
                                     android:textStyle="bold"
-                                    android:text="10 mins"
                                     app:drawableLeftCompat="@drawable/baseline_access_time_filled_24" />
                             </LinearLayout>
 
@@ -423,12 +417,12 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
                                 android:layout_marginStart="30dp"
+                                android:layout_marginTop="2dp"
                                 android:text="9.8"
                                 android:textColor="@color/black"
-                                android:textStyle="bold"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
                                 app:drawableLeftCompat="@drawable/baseline_star_24" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -439,56 +433,54 @@
                         android:id="@+id/star_buck_card_view"
                         android:layout_width="290dp"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="12dp"
+                        android:layout_marginEnd="10dp"
                         android:elevation="4dp"
-                        android:layout_marginEnd="10dp">
+                        app:cardCornerRadius="12dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:background="@drawable/rounded_rectangle"
-                            >
+                            android:orientation="vertical">
 
                             <ImageView
                                 android:layout_width="300dp"
                                 android:layout_height="160dp"
-                                android:src="@drawable/star_buck_logo"
-                                android:scaleType="fitCenter"
                                 android:layout_marginTop="5dp"
-                                />
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/star_buck_logo" />
                             <!-- Title and time -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
                                 android:orientation="horizontal"
                                 android:paddingStart="16dp"
-                                android:paddingEnd="16dp"
-                                android:layout_marginTop="12dp"
-                                >
+                                android:paddingEnd="16dp">
 
                                 <TextView
                                     android:id="@+id/star_buck_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginTop="12dp"
                                     android:text="@string/star_buck_quang_trung_address"
-                                    android:layout_gravity="start"
                                     android:textColor="@color/black"
                                     android:textStyle="bold" />
 
                                 <View
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"/>
+                                    android:layout_weight="1" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="end"
+                                    android:text="10 mins"
                                     android:textColor="@color/black"
                                     android:textStyle="bold"
-                                    android:text="10 mins"
                                     app:drawableLeftCompat="@drawable/baseline_access_time_filled_24"
                                     tools:ignore="HardcodedText" />
                             </LinearLayout>
@@ -497,12 +489,12 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
                                 android:layout_marginStart="30dp"
+                                android:layout_marginTop="2dp"
                                 android:text="9.0"
                                 android:textColor="@color/black"
-                                android:textStyle="bold"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
                                 app:drawableLeftCompat="@drawable/baseline_star_24"
                                 tools:ignore="HardcodedText" />
                         </LinearLayout>

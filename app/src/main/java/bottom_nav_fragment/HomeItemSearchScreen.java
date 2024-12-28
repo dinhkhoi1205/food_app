@@ -73,7 +73,30 @@ public class HomeItemSearchScreen extends AppCompatActivity implements RecyclerV
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         homeItemList = new ArrayList<>();
+        itemList();
+        homeItemAdapter = new HomeItemAdapter(this,homeItemList,this);
+        recyclerView.setAdapter(homeItemAdapter);
+    }
 
+    private void filterList(String text) {
+        List<HomeItem> filterdList = new ArrayList<>();
+        for(HomeItem item: homeItemList){
+            if(item.getName().toLowerCase().contains(text.toLowerCase()))
+                filterdList.add(item);
+        }
+        noResultText = findViewById(R.id.no_results_text);
+        if(filterdList.isEmpty()){
+            noResultText.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }
+        else {
+            noResultText.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+            homeItemAdapter.setFilteredList(filterdList);
+        }
+    }
+
+    private void itemList(){
         //Pizza list view
         homeItemList.add(new HomeItem("Sausage Pizza", R.drawable.sausage_pizza));
         homeItemList.add(new HomeItem("Seafood Pizza", R.drawable.seafood_pizza));
@@ -117,27 +140,6 @@ public class HomeItemSearchScreen extends AppCompatActivity implements RecyclerV
 
         //Starbucks list view
         homeItemList.add(new HomeItem("Starbucks", R.drawable.star_buck_logo));
-
-        homeItemAdapter = new HomeItemAdapter(this,homeItemList,this);
-        recyclerView.setAdapter(homeItemAdapter);
-    }
-
-    private void filterList(String text) {
-        List<HomeItem> filterdList = new ArrayList<>();
-        for(HomeItem item: homeItemList){
-            if(item.getName().toLowerCase().contains(text.toLowerCase()))
-                filterdList.add(item);
-        }
-        noResultText = findViewById(R.id.no_results_text);
-        if(filterdList.isEmpty()){
-            noResultText.setVisibility(View.VISIBLE);
-            recyclerView.setVisibility(View.GONE);
-        }
-        else {
-            noResultText.setVisibility(View.GONE);
-            recyclerView.setVisibility(View.VISIBLE);
-            homeItemAdapter.setFilteredList(filterdList);
-        }
     }
 
     @Override

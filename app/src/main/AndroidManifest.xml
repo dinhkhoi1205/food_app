@@ -25,6 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food_app_2">
         <activity
+            android:name=".verify_screen"
+            android:exported="false" />
+        <activity
             android:name=".food_order_view"
             android:exported="false" />
         <activity

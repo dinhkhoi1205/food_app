@@ -11,4 +11,8 @@
     <color name="orange">#FFA24C</color>
     <color name="green">#47e51c</color>
     <color name="red">#FF0000</color>
+    <color name="android_green">#32de84</color>
+    <color name="medium_green">#4CAF50</color>
+    <color name="bright_mint">#4FFFB0</color>
+    <color name="light_blue">#81D4FA</color>
 </resources>
