@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.food_app_2.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.Objects;
 
@@ -23,7 +24,7 @@ import asset.CartDBHelper;
 
 public class food_type_detail extends AppCompatActivity {
 
-    ImageView foodImage;
+    ShapeableImageView foodImage;
     TextView foodName;
     TextView foodPrice;
     TextView foodDescription;

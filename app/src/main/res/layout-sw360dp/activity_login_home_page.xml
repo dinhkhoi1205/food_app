@@ -61,6 +61,7 @@
                 android:background="@drawable/dark_line_rounded"
                 android:drawablePadding="12dp"
                 android:layout_margin="10dp"
+                android:textColorHint="@color/black"
                 android:hint="@string/username_enter_hint"
                 android:drawableStart="@drawable/baseline_email_24"
                 android:padding="12dp"
@@ -86,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:textColorHint="@color/light_gray"
+                android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/black"
                 app:passwordToggleEnabled="true">
 

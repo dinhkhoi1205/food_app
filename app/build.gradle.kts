@@ -56,4 +56,5 @@ dependencies {
     implementation(libs.play.services.maps)
     implementation(libs.glide)
     implementation(libs.core.splashscreen)
+    implementation (libs.circleimageview)
 }
