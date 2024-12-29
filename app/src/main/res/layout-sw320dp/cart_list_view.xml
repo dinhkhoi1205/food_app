@@ -24,7 +24,7 @@
     <TextView
         android:id="@+id/food_name_cart_list_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_toEndOf="@id/food_cart_image"
         android:layout_toStartOf="@id/price_text_view_cart_list_view"
         android:layout_marginTop="20dp"
