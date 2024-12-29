@@ -158,52 +158,8 @@ To download and open the project, follow these steps:
 
          Code to save order in real time:
          
-         ```
-         btnDialogYes.setOnClickListener(new View.OnClickListener() {
-                    @SuppressLint("NotifyDataSetChanged")
-                    @Override
-                    public void onClick(View v) {
-                        String addressToSave = enterAddress.getText().toString();
-                        if (addressToSave.isEmpty()) {
-                            Toast.makeText(getActivity(), "Please enter address", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-                        if (currentUser == null) {
-                            Toast.makeText(getActivity(), "User not authenticated", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        String userId = currentUser.getUid();
-                        DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("User").child(userId);
-                        DatabaseReference requestReference = FirebaseDatabase.getInstance().getReference("Request");
-                        userReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                String phone = snapshot.child("phone").getValue(String.class);
-                                String name = snapshot.child("userName").getValue(String.class);
-                                Request request = new Request(phone, name, addressToSave, total, orderList);
-
-                                requestReference.push().setValue(request).addOnCompleteListener(uploadTask -> {
-                                    if (uploadTask.isSuccessful()) {
-                                        Toast.makeText(getActivity(), "Order successfully", Toast.LENGTH_SHORT).show();
-                                        clearCart();
-                                        dialog.dismiss();
-
-                                        makeNotification();
-                                    } else
-                                        Toast.makeText(getActivity(), "Order fail", Toast.LENGTH_SHORT).show();
-                                });
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-                    }
-                });
-         ```
+         <img src="https://github.com/user-attachments/assets/b4fc9da4-0f72-48e2-9460-e423039b5038" width="300" />
+           
   5. Profile management
      * Update your profile and change your profile picture.
 
