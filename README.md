@@ -98,31 +98,7 @@ To download and open the project, follow these steps:
     
     Code for saving information in registration and upload in firebase realtime and account in firebase authentication:
 
-    ```
-    firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
-                        if (task.isSuccessful()){
-                            String userId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
-                            User user = new User(username,email,phone);
-
-                            reference.child(userId).setValue(user).addOnCompleteListener(dbTask ->{
-                                if(dbTask.isSuccessful()){
-                                    Toast.makeText(registration_screen.this, "You have signed successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(registration_screen.this,login_home_page.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            });
-                        } else{
-                            String errorMessage = Objects.requireNonNull(task.getException()).getMessage();
-                            assert errorMessage != null;
-                            if (errorMessage.contains("The email address is already in use by another account")) {
-                                Toast.makeText(registration_screen.this, "This email is already registered. Please use a different email.", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(registration_screen.this, "Registration failed: " + errorMessage, Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-    ```
+     <img src="https://github.com/user-attachments/assets/4d2b5c2a-2705-4322-b3ed-ac413395f7b1" alt="Registration Screenshot" width="300"/>
 
     **Screenshot**:
 
@@ -161,25 +137,8 @@ To download and open the project, follow these steps:
 
        Code add quantity and save items in cart order:
 
-       ```
-       textQuantity.setText(String.valueOf(count));
-            addItemButton.setOnClickListener(v -> {
-                if (count != 0) {
-                    if(cartDBHelper.isItemInCart(nameDetail)){
-                        Toast.makeText(this, "You already have this item in cart", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        //Save data in sql
-                        boolean checkInsertCartData = cartDBHelper.cartInsert(nameDetail, basePrice, count);
-                        if (checkInsertCartData) {
-                            Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
-                else
-                    Toast.makeText(this, "You must set quantity in order to order ", Toast.LENGTH_SHORT).show();
-            });
-       ```
+         <img src="https://github.com/user-attachments/assets/95113f06-6ec6-426b-9e1f-5d42a295e526" width="300"/>
+       
   4. Place order
      * Review in your order and enter the current location in order to place it
 
