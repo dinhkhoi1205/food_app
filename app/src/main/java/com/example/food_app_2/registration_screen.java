@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.food_app_2.databinding.ActivityRegistrationScreenBinding;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -124,7 +125,8 @@ public class registration_screen extends AppCompatActivity {
                             String errorMessage = Objects.requireNonNull(task.getException()).getMessage();
                             assert errorMessage != null;
                             if (errorMessage.contains("The email address is already in use by another account")) {
-                                Toast.makeText(registration_screen.this, "This email is already registered. Please use a different email.", Toast.LENGTH_SHORT).show();
+                                Snackbar.make(findViewById(android.R.id.content), "This email is already registered. Please use a different email.", Snackbar.LENGTH_LONG).show();
+
                             } else {
                                 Toast.makeText(registration_screen.this, "Registration failed: " + errorMessage, Toast.LENGTH_SHORT).show();
                             }
