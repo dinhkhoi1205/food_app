@@ -56,7 +56,17 @@ public class HomeItemSearchScreen extends AppCompatActivity implements RecyclerV
         });
 
         searchView = findViewById(R.id.search_bar_item_view);
-        searchView.clearFocus();
+        // Handle clicks on the empty text area of the SearchView
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (searchView.isIconified()) {
+                    searchView.setIconified(false);  // Expand the SearchView if it's iconified
+                    searchView.requestFocus();       // Focus on the search bar
+                }
+            }
+        });
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
