@@ -24,7 +24,6 @@ import java.util.Objects;
 import model.User;
 
 public class registration_screen extends AppCompatActivity {
-    ActivityRegistrationScreenBinding binding;
     FirebaseDatabase db;
     DatabaseReference reference;
 
@@ -124,7 +123,7 @@ public class registration_screen extends AppCompatActivity {
                         } else{
                             String errorMessage = Objects.requireNonNull(task.getException()).getMessage();
                             assert errorMessage != null;
-                            if (errorMessage.contains("The email address is already in use by another account")) {
+                            if (errorMessage.contains("email")) {
                                 Snackbar.make(findViewById(android.R.id.content), "This email is already registered. Please use a different email.", Snackbar.LENGTH_LONG).show();
 
                             } else {

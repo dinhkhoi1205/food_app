@@ -54,6 +54,7 @@ GoogleMap.OnMarkerDragListener{
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_map);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //Show google map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.id_map);
         mapSearchView = findViewById(R.id.map_search_view);
         MaterialButton chooseLocationButton = findViewById(R.id.btn_choose_location);
@@ -109,7 +110,7 @@ GoogleMap.OnMarkerDragListener{
     }
 
     @Override
-    public void onMapReady(@NonNull GoogleMap map) {
+    public void onMapReady(@NonNull GoogleMap map) {//When the map is call
         googleMap = map;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         googleMap.setOnMapLongClickListener(this);

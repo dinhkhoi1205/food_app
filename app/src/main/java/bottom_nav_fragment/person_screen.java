@@ -58,8 +58,7 @@ public class person_screen extends Fragment {
     FirebaseAuth auth;
 
     Dialog dialog;
-
-    int SELECT_PICTURE = 200;
+    
     ImageView imageProfile;
 
     @Override

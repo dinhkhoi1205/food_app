@@ -61,8 +61,6 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
     CartDBHelper cartDBHelper;
     MaterialButton placeOrderButton;
 
-    TextView chooseLocation;
-
     MaterialButton clearOrderButton;
 
     TextView totalPriceTextView;
@@ -194,8 +192,6 @@ public class cart_screen extends Fragment implements CartAdapter.OnQuantityChang
     private List<Order> loadCartItems() {
         List<Order> itemList = new ArrayList<>();
         Cursor cursor = cartDBHelper.getCartData();
-        //Get image from share preference
-        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("CartPrefs", MODE_PRIVATE);
 
         if (cursor != null && cursor.moveToFirst()) {
             do {

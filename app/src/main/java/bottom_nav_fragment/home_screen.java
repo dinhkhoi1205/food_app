@@ -89,7 +89,7 @@ public class home_screen extends Fragment {
 
         address_textView.setText(addressSave);
 
-
+        //Recall back to home screen after click choose location in map
         ActivityResultLauncher<Intent> mapActivityResultLauncher =
                 registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                     if (result.getResultCode() == Activity.RESULT_OK) {
